@@ -150,7 +150,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 15px 0;
+            padding: 5px 0;
             transition: var(--transicion);
         }
 
@@ -172,8 +172,8 @@
         }
 
         .brand-logo {
-            max-height: 300px;
-            max-width: 800px;
+            max-height: 200px;
+            max-width: 600px;
             width: auto;
             object-fit: contain;
         }
@@ -1112,10 +1112,10 @@
             
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.style.padding = '10px 0';
+                    header.style.padding = '2px 0';
                     header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
                 } else {
-                    header.style.padding = '15px 0';
+                    header.style.padding = '5px 0';
                     header.style.boxShadow = 'none';
                 }
 
