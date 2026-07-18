@@ -171,10 +171,11 @@
         }
 
         .brand-logo {
-            max-height: 45px;
+            max-height: 150px;
+            max-width: 300px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+            /* Se remueve el drop-shadow por si la imagen tiene algún borde transparente que cause un efecto de caja */
         }
 
         .nav-links {
@@ -602,7 +603,8 @@
         }
 
         .footer-brand-logo {
-            max-height: 60px;
+            max-height: 200px;
+            max-width: 350px;
             width: auto;
             object-fit: contain;
         }
