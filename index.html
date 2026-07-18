@@ -162,18 +162,19 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--blanco);
-            font-size: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .logo strong {
-            font-weight: 700;
+            transition: var(--transicion);
         }
         
-        .logo span {
-            font-weight: 400;
+        .logo:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .brand-logo {
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
         }
 
         .nav-links {
@@ -594,13 +595,16 @@
         }
 
         .footer-logo {
-            font-size: 1.5rem;
-            color: var(--blanco);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+        }
+
+        .footer-brand-logo {
+            max-height: 60px;
+            width: auto;
+            object-fit: contain;
         }
 
         .footer-links h4, .footer-legal h4 {
@@ -769,12 +773,7 @@
     <header id="header">
         <div class="container nav-container">
             <a href="#inicio" class="logo">
-                <!-- SVG Icon inline -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
-                    <path d="M12 2L12 8M12 16L12 22M2 12L8 12M16 12L22 12M4.93 4.93L9.17 9.17M14.83 14.83L19.07 19.07M4.93 19.07L9.17 14.83M14.83 9.17L19.07 4.93" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <strong>Código</strong><span>Nexo</span>
+                <img src="logo-codigonexo.png" alt="CódigoNexo Logo" class="brand-logo">
             </a>
             
             <nav class="nav-links">
@@ -1025,11 +1024,7 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
-                            <path d="M12 2L12 8M12 16L12 22M2 12L8 12M16 12L22 12M4.93 4.93L9.17 9.17M14.83 14.83L19.07 19.07M4.93 19.07L9.17 14.83M14.83 9.17L19.07 4.93" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <strong>Código</strong><span>Nexo</span>
+                        <img src="logo-codigonexo.png" alt="CódigoNexo Logo" class="footer-brand-logo">
                     </div>
                     <p style="font-size: 0.9rem;">Convertimos tus ideas en herramientas digitales.</p>
                 </div>
