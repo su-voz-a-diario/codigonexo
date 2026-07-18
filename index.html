@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CódigoNexo | Convertimos tus ideas en herramientas digitales</title>
+    
+    <meta name="description" content="CódigoNexo es una consultora de soluciones digitales. Creamos aplicaciones web, plataformas de capacitación, evaluaciones de talento y software a la medida.">
+    <meta name="keywords" content="consultoría digital, desarrollo web, plataformas de capacitación, evaluaciones de talento, aplicaciones web a medida, CódigoNexo">
+    
+    <!-- Favicon inline SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233A7CA5'><circle cx='12' cy='12' r='4'/><path d='M12 2L12 8M12 16L12 22M2 12L8 12M16 12L22 12M4.93 4.93L9.17 9.17M14.83 14.83L19.07 19.07M4.93 19.07L9.17 14.83M14.83 9.17L19.07 4.93' stroke='%233A7CA5' stroke-width='2' stroke-linecap='round'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para íconos sociales y UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --azul-oscuro: #0A2540;
+            --azul-medio: #1E4A6B;
+            --azul-claro: #3A7CA5;
+            --blanco: #FFFFFF;
+            --gris-fondo: #F5F7FA;
+            --gris-texto: #4A4A4A;
+            --naranja-cta: #FF6B35;
+            --sombra-suave: 0 4px 12px rgba(0,0,0,0.08);
+            --borde-radius: 12px;
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gris-texto);
+            background-color: var(--blanco);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILIDADES --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--azul-oscuro);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .title-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--naranja-cta);
+            margin: 0 auto 40px auto;
+            border-radius: 2px;
+        }
+
+        /* Animaciones al hacer scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- BOTONES --- */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: var(--borde-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transicion);
+            text-align: center;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--naranja-cta);
+            color: var(--blanco);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--blanco);
+            border: 2px solid var(--blanco);
+            padding: 12px 30px; /* Ajuste por el borde */
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* --- HEADER / NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transicion);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blanco);
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo strong {
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: none; /* Oculto en móvil por defecto */
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            color: var(--blanco);
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+        }
+
+        /* --- MENU MOVIL --- */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--azul-oscuro);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transicion);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            color: var(--blanco);
+            font-size: 1.5rem;
+            margin: 15px 0;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .mobile-menu .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--blanco);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            overflow: hidden;
+            text-align: center;
+            padding-top: 70px; /* Espacio para el header */
+        }
+
+        /* Patrón de fondo sutil procedural */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            color: var(--blanco);
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--blanco);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* --- SERVICIOS --- */
+        .servicios {
+            background-color: var(--gris-fondo);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: var(--blanco);
+            border-radius: var(--borde-radius);
+            padding: 30px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            color: var(--azul-claro);
+            margin: 0 auto 20px auto;
+        }
+
+        .service-card h3 {
+            color: var(--azul-oscuro);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- POR QUE ELEGIRNOS --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            color: var(--azul-claro);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            color: var(--azul-oscuro);
+        }
+
+        /* --- PORTAFOLIO --- */
+        .portafolio {
+            background-color: var(--gris-fondo);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background-color: var(--blanco);
+            border-radius: var(--borde-radius);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--azul-medio) 0%, var(--azul-claro) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--gris-fondo);
+            color: var(--azul-claro);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-content h3 {
+            color: var(--azul-oscuro);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* --- NOSOTROS --- */
+        .nosotros-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nosotros-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--gris-fondo);
+            border: 4px solid var(--azul-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--azul-medio);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .nosotros-text {
+            text-align: center;
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            font-size: 1.1rem;
+        }
+
+        /* --- CONTACTO --- */
+        .contacto {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+        }
+
+        .contacto .section-title {
+            color: var(--blanco);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: var(--borde-radius);
+            backdrop-filter: blur(5px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            background-color: var(--blanco);
+            color: var(--azul-oscuro);
+            font-family: 'Inter', sans-serif;
+            transition: var(--transicion);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--naranja-cta);
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-btn {
+            width: 100%;
+        }
+
+        .success-message {
+            display: none;
+            background-color: rgba(37, 211, 102, 0.2);
+            border: 1px solid #25D366;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .disclaimer a {
+            color: var(--naranja-cta);
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--naranja-cta);
+            flex-shrink: 0;
+        }
+
+        .info-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-text p, .info-text a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+        }
+
+        .info-text a:hover {
+            color: var(--naranja-cta);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--borde-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #051B2F;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            color: var(--blanco);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .footer-links h4, .footer-legal h4 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a, .footer-legal a {
+            transition: var(--transicion);
+        }
+
+        .footer-links a:hover, .footer-legal a:hover {
+            color: var(--naranja-cta);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- ELEMENTOS FLOTANTES --- */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--blanco);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: var(--transicion);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            right: 20px;
+            background-color: #25D366;
+        }
+
+        .scroll-top-btn {
+            left: 20px;
+            background-color: var(--azul-medio);
+            opacity: 0;
+            pointer-events: none;
+            font-size: 1.5rem;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* --- MODAL PRIVACIDAD --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transicion);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background-color: var(--blanco);
+            border-radius: var(--borde-radius);
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transicion);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 1.5rem;
+            background: none; border: none;
+            cursor: pointer; color: var(--gris-texto);
+        }
+        
+        .modal-body h2 { margin-bottom: 20px; color: var(--azul-oscuro); }
+        .modal-body p { margin-bottom: 15px; font-size: 0.9rem; }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        /* Tablet */
+        @media (min-width: 768px) {
+            .section-padding { padding: 80px 0; }
+            .section-title { font-size: 2.5rem; }
+            
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+            .hero-buttons { flex-direction: row; justify-content: center; }
+
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .nosotros-content { flex-direction: row; text-align: left; }
+            .nosotros-text { text-align: left; }
+            
+            .footer-grid { grid-template-columns: repeat(3, 1fr); text-align: left; }
+            .footer-logo { justify-content: flex-start; }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .hamburger { display: none; }
+            .nav-links {
+                display: flex;
+                gap: 30px;
+            }
+            .nav-links a {
+                color: var(--blanco);
+                font-weight: 500;
+                position: relative;
+                padding-bottom: 5px;
+            }
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; width: 0; height: 2px;
+                background-color: var(--naranja-cta);
+                transition: var(--transicion);
+            }
+            .nav-links a:hover::after { width: 100%; }
+
+            .services-grid { grid-template-columns: repeat(4, 1fr); }
+            .features-grid { grid-template-columns: repeat(5, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                <!-- SVG Icon inline -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+                    <path d="M12 2L12 8M12 16L12 22M2 12L8 12M16 12L22 12M4.93 4.93L9.17 9.17M14.83 14.83L19.07 19.07M4.93 19.07L9.17 14.83M14.83 9.17L19.07 4.93" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <strong>Código</strong><span>Nexo</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MENÚ MÓVIL OVERLAY -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+        <button class="close-menu" id="close-menu-btn" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="#inicio" class="mobile-link">Inicio</a>
+        <a href="#servicios" class="mobile-link">Servicios</a>
+        <a href="#portafolio" class="mobile-link">Portafolio</a>
+        <a href="#nosotros" class="mobile-link">Nosotros</a>
+        <a href="#contacto" class="mobile-link">Contacto</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HÉROE -->
+        <section id="inicio" class="hero">
+            <div class="hero-content fade-in-up">
+                <h1>TRANSFORMAMOS PROCESOS<br>EN SOLUCIONES DIGITALES</h1>
+                <p>En CódigoNexo creamos aplicaciones web, plataformas de capacitación, evaluaciones de talento y software a la medida. Nos adaptamos a tu negocio, sin complejidades técnicas para ti.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicita asesoría gratuita</a>
+                    <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+                </div>
+            </div>
+            <a href="#servicios" class="scroll-down" aria-label="Bajar a servicios">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="section-padding servicios">
+            <div class="container">
+                <h2 class="section-title fade-in-up">LO QUE HACEMOS</h2>
+                <div class="title-line fade-in-up"></div>
+                
+                <div class="services-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="service-card fade-in-up">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <h3>Plataformas de Capacitación</h3>
+                        <p>Digitalizamos tu formación presencial. Cursos, exámenes, certificados y reportes automáticos, todo con tu marca.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 2 -->
+                    <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                        <h3>Evaluaciones de Talento</h3>
+                        <p>Creamos pruebas personalizadas para medir conocimientos técnicos. Resultados instantáneos y reportes exportables.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 3 -->
+                    <div class="service-card fade-in-up" style="transition-delay: 0.2s;">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <h3>Aplicaciones Web a Medida</h3>
+                        <p>Sistemas de gestión, dashboards, automatizaciones. Software que se adapta exactamente a tus procesos.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 4 -->
+                    <div class="service-card fade-in-up" style="transition-delay: 0.3s;">
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <h3>Consultoría Tecnológica</h3>
+                        <p>Analizamos tu operación y te proponemos la solución digital más eficiente, sin rodeos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUE ELEGIRNOS -->
+        <section id="por-que" class="section-padding">
+            <div class="container">
+                <h2 class="section-title fade-in-up">¿POR QUÉ CÓDIGONEXO?</h2>
+                <div class="title-line fade-in-up"></div>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in-up">
+                        <i class="fa-solid fa-circle-check feature-icon"></i>
+                        <p class="feature-text">Desarrollo ágil con IA: entregas en semanas, no meses.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="transition-delay: 0.1s;">
+                        <i class="fa-solid fa-circle-check feature-icon"></i>
+                        <p class="feature-text">Soluciones 100% personalizadas.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="transition-delay: 0.2s;">
+                        <i class="fa-solid fa-circle-check feature-icon"></i>
+                        <p class="feature-text">No necesitas un área de sistemas interna.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="transition-delay: 0.3s;">
+                        <i class="fa-solid fa-circle-check feature-icon"></i>
+                        <p class="feature-text">Modelo flexible: membresía o desarrollo exclusivo.</p>
+                    </div>
+                    <div class="feature-item fade-in-up" style="transition-delay: 0.4s;">
+                        <i class="fa-solid fa-circle-check feature-icon"></i>
+                        <p class="feature-text">Acompañamiento real: un líder de proyecto siempre disponible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAFOLIO -->
+        <section id="portafolio" class="section-padding portafolio">
+            <div class="container">
+                <h2 class="section-title fade-in-up">PROYECTOS REALIZADOS</h2>
+                <div class="title-line fade-in-up"></div>
+                
+                <div class="portfolio-grid">
+                    <!-- Proyecto 1 -->
+                    <div class="portfolio-card fade-in-up">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="badge">2025</span>
+                            <h3>Integriti Test</h3>
+                            <p>Plataforma de evaluación de talento creada en 4 semanas.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2 -->
+                    <div class="portfolio-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="portfolio-image">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="badge">Reciente</span>
+                            <h3>Plataforma de Capacitación Sector Salud</h3>
+                            <p>Plataforma 2 en 1: pruebas de capacidad + aula virtual con certificados.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up" style="text-align: center; margin-top: 40px;">
+                    <a href="#contacto" class="btn btn-primary">¿Quieres ver más? Contáctanos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="section-padding">
+            <div class="container">
+                <h2 class="section-title fade-in-up">EL EQUIPO DETRÁS DE CÓDIGONEXO</h2>
+                <div class="title-line fade-in-up"></div>
+                
+                <div class="nosotros-content fade-in-up">
+                    <div class="nosotros-image">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="nosotros-text">
+                        <p>En CódigoNexo combinamos experiencia en desarrollo de software, inteligencia artificial y consultoría de procesos. Somos un equipo compacto y enfocado en resultados, sin burocracia. Cada proyecto tiene un líder dedicado que entiende tu negocio y se comunica directamente contigo.</p>
+                        <p class="signature">Director de Proyectos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section-padding contacto">
+            <div class="container">
+                <h2 class="section-title fade-in-up">HABLEMOS DE TU PROYECTO</h2>
+                <div class="title-line fade-in-up"></div>
+                
+                <div class="contact-grid">
+                    <!-- Formulario -->
+                    <div class="contact-form fade-in-up">
+                        <form id="contactForm" action="https://formspree.io/f/[TU_FORMSPREE_ID]" method="POST">
+                            <div class="form-group">
+                                <label for="nombre" style="display:none;">Nombre</label>
+                                <input type="text" id="nombre" name="name" class="form-control" placeholder="Tu Nombre *" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" style="display:none;">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Tu Correo Electrónico *" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" style="display:none;">Teléfono</label>
+                                <input type="tel" id="telefono" name="phone" class="form-control" placeholder="Tu Teléfono (Opcional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje" style="display:none;">Mensaje</label>
+                                <textarea id="mensaje" name="message" class="form-control" placeholder="Cuéntanos sobre tu idea o proyecto *" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-btn">Enviar mensaje</button>
+                        </form>
+                        <div id="formSuccess" class="success-message">
+                            ¡Gracias! Te responderemos en menos de 24 horas.
+                        </div>
+                        <p class="disclaimer">Al enviar este formulario aceptas nuestro <a href="#" id="openPrivacyModal">Aviso de Privacidad</a>.</p>
+                    </div>
+                    
+                    <!-- Info de Contacto -->
+                    <div class="contact-info fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h4>Email</h4>
+                                <a href="mailto:codigonexo.rgz@gmail.com">codigonexo.rgz@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-text">
+                                <h4>Teléfono</h4>
+                                <a href="tel:525529058845">+52 55 2905 8845</a>
+                                <p style="font-size: 0.85rem; margin-top: 5px;">También puedes escribirnos por WhatsApp.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> México / Colombia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+                            <path d="M12 2L12 8M12 16L12 22M2 12L8 12M16 12L22 12M4.93 4.93L9.17 9.17M14.83 14.83L19.07 19.07M4.93 19.07L9.17 14.83M14.83 9.17L19.07 4.93" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <strong>Código</strong><span>Nexo</span>
+                    </div>
+                    <p style="font-size: 0.9rem;">Convertimos tus ideas en herramientas digitales.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" id="openPrivacyFooter">Aviso de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 CódigoNexo. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTONES FLOTANTES -->
+    <a href="https://wa.me/525529058845?text=Hola%20CódigoNexo,%20me%20interesa%20una%20solución%20digital." target="_blank" rel="noopener noreferrer" class="floating-btn whatsapp-btn" aria-label="Chat en WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <a href="#inicio" class="floating-btn scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- MODAL AVISO DE PRIVACIDAD -->
+    <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close" id="closePrivacyModal" aria-label="Cerrar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body">
+                <h2 id="modalTitle">Aviso de Privacidad</h2>
+                <p>En CódigoNexo, valoramos y respetamos tu privacidad. Los datos personales recabados a través de nuestro formulario de contacto serán utilizados exclusivamente para dar seguimiento a tu solicitud, brindarte asesoría y enviarte información relacionada con nuestros servicios.</p>
+                <p>Tus datos no serán compartidos, vendidos ni alquilados a terceros bajo ninguna circunstancia, y se almacenarán de forma segura aplicando medidas técnicas y administrativas para evitar su vulneración.</p>
+                <p>De conformidad con la legislación aplicable, tienes derecho a ejercer tus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) sobre tus datos personales. Para cualquier solicitud relacionada con el manejo de tu información, puedes contactarnos directamente en <strong>codigonexo.rgz@gmail.com</strong>.</p>
+                <p>Al enviar tus datos, confirmas que has leído y aceptas los términos de este Aviso de Privacidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Menú Móvil ---
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                if(mobileMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden'; // Prevenir scroll
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // --- Header Scroll Effect ---
+            const header = document.getElementById('header');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = 'none';
+                }
+
+                // Mostrar/Ocultar botón de scroll top
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+
+            // --- Animaciones Scroll (Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Solo animar una vez
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- Formulario (Interceptar submit) ---
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+
+            if(contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevenir recarga
+                    
+                    // Aquí podrías agregar tu código AJAX/Fetch para enviar a Formspree si deseas hacerlo asíncrono.
+                    // Ejemplo básico con Fetch:
+                    const data = new FormData(contactForm);
+                    fetch(contactForm.action, {
+                        method: contactForm.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            contactForm.style.display = 'none';
+                            formSuccess.style.display = 'block';
+                            contactForm.reset();
+                        } else {
+                            alert('Hubo un problema al enviar el formulario. Inténtalo nuevamente.');
+                        }
+                    }).catch(error => {
+                        alert('Hubo un problema de conexión. Inténtalo nuevamente.');
+                    });
+                });
+            }
+
+            // --- Modal Privacidad ---
+            const privacyModal = document.getElementById('privacyModal');
+            const openPrivacyModalBtn = document.getElementById('openPrivacyModal');
+            const openPrivacyFooterBtn = document.getElementById('openPrivacyFooter');
+            const closePrivacyModalBtn = document.getElementById('closePrivacyModal');
+
+            function openModal(e) {
+                if(e) e.preventDefault();
+                privacyModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                privacyModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if(openPrivacyModalBtn) openPrivacyModalBtn.addEventListener('click', openModal);
+            if(openPrivacyFooterBtn) openPrivacyFooterBtn.addEventListener('click', openModal);
+            if(closePrivacyModalBtn) closePrivacyModalBtn.addEventListener('click', closeModal);
+            
+            // Cerrar al clickear afuera del contenido
+            privacyModal.addEventListener('click', (e) => {
+                if(e.target === privacyModal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
