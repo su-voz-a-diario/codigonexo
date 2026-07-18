@@ -164,8 +164,6 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            height: 65px; /* Altura de la barra un poco más holgada */
-            overflow: hidden; /* Recorta el espacio transparente extra */
             transition: var(--transicion);
         }
         
@@ -175,11 +173,11 @@
         }
 
         .brand-logo {
-            height: 120px; /* Tamaño real ajustado para que no se corte el logo */
-            max-height: none;
-            max-width: none;
+            max-height: 50px; /* Mantiene la barra delgada */
             width: auto;
-            object-fit: contain;
+            transform: scale(2.2); /* Amplía visualmente el logo para compensar su padding transparente */
+            transform-origin: left center;
+            transition: var(--transicion);
         }
 
         .nav-links {
@@ -604,16 +602,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 70px;
-            overflow: hidden;
         }
 
         .footer-brand-logo {
-            height: 120px;
-            max-height: none;
-            max-width: none;
+            max-height: 50px;
             width: auto;
-            object-fit: contain;
+            transform: scale(2.2);
+            transform-origin: center center;
         }
 
         .footer-links h4, .footer-legal h4 {
