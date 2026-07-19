@@ -265,6 +265,17 @@
             padding: 0 20px;
         }
 
+        .hero-logo-solo {
+            position: absolute;
+            bottom: 100%; /* Posiciona justo arriba del contenido */
+            left: 50%;
+            transform: translateX(-50%);
+            max-height: 25vh; /* Ocupa buen espacio pero es responsivo */
+            width: auto;
+            margin-bottom: 30px;
+            pointer-events: none;
+        }
+
         .hero h1 {
             color: var(--blanco);
             font-size: 2rem;
@@ -811,6 +822,7 @@
         <!-- HÉROE -->
         <section id="inicio" class="hero">
             <div class="hero-content fade-in-up">
+                <img src="logo-solo.png" alt="CódigoNexo Icon" class="hero-logo-solo">
                 <h1>TRANSFORMAMOS PROCESOS<br>EN SOLUCIONES DIGITALES</h1>
                 <p>En CódigoNexo creamos aplicaciones web, plataformas de capacitación, evaluaciones de talento y software a la medida. Nos adaptamos a tu negocio, sin complejidades técnicas para ti.</p>
                 <div class="hero-buttons">
