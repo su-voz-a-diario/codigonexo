@@ -1,1 +1,40 @@
 /* Globals */
+:root {
+  /* Layout Constraints */
+  --max-width-content: 1200px;
+  --max-width-narrow: 800px;
+  --max-width-wide: 1600px;
+  
+  /* Vertical Rhythm (Spacing) */
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(1rem, 2vw, 1.5rem);
+  --space-md: clamp(1.5rem, 3vw, 2.5rem);
+  --space-lg: clamp(3rem, 5vw, 4.5rem);
+  --space-xl: clamp(4rem, 8vw, 8rem);
+  --space-section: clamp(5rem, 10vw, 10rem);
+  
+  /* Fluid Typography */
+  --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --font-size-h2: clamp(2rem, 4vw, 3rem);
+  --font-size-h3: clamp(1.5rem, 2.5vw, 2rem);
+  --font-size-body: clamp(1rem, 1.2vw, 1.125rem);
+  --font-size-sm: clamp(0.875rem, 1vw, 0.95rem);
+  
+  /* Shared Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0c;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}

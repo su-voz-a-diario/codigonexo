@@ -1,0 +1,31 @@
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  color: #3b82f6;
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: #fff;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  font-size: var(--font-size-sm);
+}

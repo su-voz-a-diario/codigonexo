@@ -1,0 +1,43 @@
+.header {
+  margin-bottom: var(--space-xl);
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  color: #fff;
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: var(--font-size-body);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 700px;
+  line-height: 1.6;
+}

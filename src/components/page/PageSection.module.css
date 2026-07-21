@@ -1,0 +1,23 @@
+.section {
+  width: 100%;
+}
+
+/* Themes */
+.transparent { background: transparent; }
+.dark { background: #0a0a0c; }
+.darker { background: #050506; }
+
+/* Spacing */
+.space-default {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.space-large {
+  padding-top: calc(var(--space-section) * 1.5);
+  padding-bottom: calc(var(--space-section) * 1.5);
+}
+
+.space-none {
+  padding: 0;
+}

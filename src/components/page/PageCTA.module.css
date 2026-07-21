@@ -1,0 +1,21 @@
+.wrapper {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  margin-top: var(--space-xl);
+}
+
+.title {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: #fff;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-body);
+}
