@@ -7,7 +7,7 @@ interface Props {
   className?: string;
 }
 
-export default function PageSection({ children, theme = 'transparent', spacing = 'default', className = '' }: Props) {
+export default function PageSection({ children, theme = 'dark', spacing = 'default', className = '' }: Props) {
   return (
     <section className={`${styles.section} ${styles[theme]} ${styles[`space-${spacing}`]} ${className}`}>
       {children}

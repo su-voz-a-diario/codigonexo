@@ -4,8 +4,9 @@
   gap: 0.5rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
-  padding: 1.5rem 2rem;
-  margin-top: 80px;
+  padding: calc(80px + 1.5rem) 2rem 1.5rem;
+  background: #0a0a0c;
+  color: #fff;
 }
 
 .item {

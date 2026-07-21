@@ -3,9 +3,19 @@
 }
 
 /* Themes */
-.transparent { background: transparent; }
-.dark { background: #0a0a0c; }
-.darker { background: #050506; }
+.transparent {
+  background: transparent;
+}
+
+.dark {
+  background: #0a0a0c;
+  color: #fff;
+}
+
+.darker {
+  background: #050506;
+  color: #fff;
+}
 
 /* Spacing */
 .space-default {
