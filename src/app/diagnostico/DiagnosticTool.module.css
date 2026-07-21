@@ -1,0 +1,149 @@
+.tool {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.intro,
+.question,
+.result,
+.emptyResult {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md);
+}
+
+.intro {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.introText,
+.questionHelp,
+.resultText,
+.recommendation,
+.note {
+  color: var(--color-text-subtle);
+  line-height: 1.7;
+}
+
+.form {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.question {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.questionTitle {
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+.options {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.option input {
+  margin-top: 0.25rem;
+  accent-color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.button,
+.secondaryButton {
+  border-radius: var(--radius-button);
+  padding: 0.9rem 1.2rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.button {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary-border);
+  box-shadow: var(--shadow-primary);
+}
+
+.secondaryButton {
+  color: var(--color-text);
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border-strong);
+}
+
+.button:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.secondaryButton:focus-visible,
+.option input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.result {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.resultHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.level {
+  color: var(--color-text);
+  font-size: var(--font-size-h3);
+}
+
+.score {
+  color: var(--color-text);
+  background: var(--color-primary-muted);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-button);
+  padding: 0.45rem 0.75rem;
+  font-weight: 700;
+}
+
+.recommendations {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.recommendation {
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-primary);
+}
+
+.emptyResult {
+  color: var(--color-text-subtle);
+  line-height: 1.7;
+}
+
+.note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-faint);
+}
