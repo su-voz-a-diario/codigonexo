@@ -252,7 +252,7 @@ export default function Home() {
               email="codigonexo.rgz@gmail.com"
               phoneLabel="+52 55 2905 8845"
               phoneHref="tel:525529058845"
-              location="México / Colombia"
+              location="México · Atención internacional"
             />
           </PageContainer>
         </PageSection>
