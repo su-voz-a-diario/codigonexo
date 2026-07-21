@@ -1,2 +1,22 @@
 .DS_Store
 node_modules/
+
+# Logs and Reports
+*.log
+npm-debug.log*
+reporte*.json
+reporte*.html
+reporte*.md
+
+# Temp and Cache
+.tmp/
+.cache/
+*.swp
+*~
+
+# Env files
+.env
+.env.local
+
+# OS files
+Thumbs.db
