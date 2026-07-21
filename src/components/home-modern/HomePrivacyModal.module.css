@@ -1,0 +1,59 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.dialog {
+  position: relative;
+  width: min(100%, 40rem);
+  max-height: min(82vh, 44rem);
+  overflow-y: auto;
+  border: 1px solid var(--color-border-hover);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-menu);
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-active);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--color-focus-strong);
+  outline-offset: 3px;
+}
+
+.body {
+  padding-right: var(--space-sm);
+}
+
+.body h2 {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-h3);
+}
+
+.body p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
