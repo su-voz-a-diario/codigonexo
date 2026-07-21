@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   height: 100%;
 }
 
@@ -16,19 +16,39 @@
 }
 
 .trigger {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 500;
   font-size: 0.95rem;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
-.trigger:hover, .active {
+.trigger:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+  color: #fff;
+}
+
+.trigger.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .dropdown {
@@ -49,7 +69,9 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.item:hover .dropdown {
+.item:hover .dropdown,
+.trigger:focus-visible + .dropdown,
+.dropdown:focus-within {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -71,8 +93,9 @@
   transition: background 0.2s ease;
 }
 
-.dropdownLink:hover {
+.dropdownLink:hover, .dropdownLink:focus-visible {
   background: rgba(255, 255, 255, 0.05);
+  outline: none;
 }
 
 .iconWrapper {
