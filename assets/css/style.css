@@ -762,3 +762,69 @@
             }
             .nav-links a:hover::after { width: 100%; }
         }
+/* Bento Grid Services */
+@media (min-width: 768px) {
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-auto-rows: minmax(280px, auto);
+        gap: 30px;
+    }
+    .service-card:nth-child(1) {
+        grid-column: span 2;
+    }
+    .service-card:nth-child(4) {
+        grid-column: span 2;
+    }
+}
+
+/* Premium UI Textures */
+.service-card, .portfolio-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle magnetic hover glow */
+.service-card:hover, .portfolio-card:hover {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Glow pseudo-element for cards */
+.service-card::before, .portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+.service-card:hover::before, .portfolio-card:hover::before {
+    opacity: 1;
+}
+
+/* Ensure content stays above the glow */
+.service-card > *, .portfolio-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Button Glow */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4) !important;
+}
