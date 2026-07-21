@@ -14,8 +14,8 @@
   --space-section: clamp(5rem, 10vw, 10rem);
   
   /* Fluid Typography */
-  --font-family-body: 'Inter', sans-serif;
-  --font-family-display: 'Montserrat', sans-serif;
+  --font-family-body: var(--font-inter), 'Inter', sans-serif;
+  --font-family-display: var(--font-montserrat), 'Montserrat', sans-serif;
   --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
   --font-size-h2: clamp(2rem, 4vw, 3rem);
   --font-size-h3: clamp(1.5rem, 2.5vw, 2rem);
@@ -69,14 +69,41 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--blanco, #fff);
+  color: var(--gris-texto, #4a4a4a);
   font-family: var(--font-family-body);
+  line-height: 1.65;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-display);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
