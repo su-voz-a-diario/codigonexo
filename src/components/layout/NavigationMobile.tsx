@@ -20,10 +20,16 @@ export default function NavigationMobile({ isOpen, onClose }: Props) {
   }, [isOpen]);
 
   return (
-    <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
+    <div
+      className={`${styles.drawer} ${isOpen ? styles.open : ''}`}
+      role="dialog"
+      aria-modal={isOpen ? true : undefined}
+      aria-hidden={!isOpen}
+      inert={!isOpen ? true : undefined}
+    >
       <div className={styles.header}>
-        <div style={{ color: 'var(--color-text)', fontWeight: 800, fontSize: '1.2rem' }}>CódigoNexo.</div>
-        <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar menú">
+        <div className={styles.logo}>CódigoNexo.</div>
+        <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar menú" type="button">
           <X size={24} />
         </button>
       </div>

@@ -26,6 +26,12 @@
   margin-bottom: 2rem;
 }
 
+.logo {
+  color: var(--color-text);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
 .closeButton {
   background: var(--color-surface-active);
   border: none;
@@ -34,6 +40,11 @@
   padding: 0.5rem;
   cursor: pointer;
   display: flex;
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-focus-strong);
+  outline-offset: 2px;
 }
 
 .content {
@@ -66,6 +77,12 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-control);
 }
 
 .linkIcon {
