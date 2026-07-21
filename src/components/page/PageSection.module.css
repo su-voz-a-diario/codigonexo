@@ -8,13 +8,13 @@
 }
 
 .dark {
-  background: #0a0a0c;
-  color: #fff;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 .darker {
-  background: #050506;
-  color: #fff;
+  background: var(--color-background-alt);
+  color: var(--color-text);
 }
 
 /* Spacing */

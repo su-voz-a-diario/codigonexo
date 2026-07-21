@@ -2,26 +2,26 @@
   padding-top: calc(var(--space-section) * 1.5);
   padding-bottom: var(--space-section);
   width: 100%;
-  background: #0a0a0c;
-  color: #fff;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 .center { text-align: center; }
 .left { text-align: left; }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-display);
   font-weight: 800;
   font-size: var(--font-size-hero);
   line-height: 1.1;
   letter-spacing: -1px;
   margin-bottom: var(--space-md);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .subtitle {
   font-size: var(--font-size-h3);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: var(--space-lg);
   font-weight: 400;

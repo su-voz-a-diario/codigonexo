@@ -15,7 +15,7 @@ export default function PageFeatureGrid({ features }: Props) {
     <ul className={styles.list}>
       {features.map((feature, idx) => (
         <li key={idx} className={styles.item}>
-          <CheckCircle color="#10b981" size={24} className={styles.icon} />
+          <CheckCircle color="var(--color-success)" size={24} className={styles.icon} />
           <div>
             <strong className={styles.title}>{feature.title}</strong>
             <p className={styles.desc}>{feature.description}</p>

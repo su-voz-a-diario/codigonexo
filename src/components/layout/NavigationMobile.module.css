@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 10, 12, 0.98);
+  background: var(--color-surface-overlay);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 2000;
@@ -27,10 +27,10 @@
 }
 
 .closeButton {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-surface-active);
   border: none;
-  color: #fff;
-  border-radius: 50%;
+  color: var(--color-text);
+  border-radius: var(--radius-pill);
   padding: 0.5rem;
   cursor: pointer;
   display: flex;
@@ -45,7 +45,7 @@
 }
 
 .sectionTitle {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-faint);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -59,7 +59,7 @@
 }
 
 .link {
-  color: #fff;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -69,7 +69,7 @@
 }
 
 .linkIcon {
-  color: #3b82f6;
+  color: var(--color-primary);
 }
 
 .footer {

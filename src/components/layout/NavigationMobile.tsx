@@ -22,7 +22,7 @@ export default function NavigationMobile({ isOpen, onClose }: Props) {
   return (
     <div className={`${styles.drawer} ${isOpen ? styles.open : ''}`}>
       <div className={styles.header}>
-        <div style={{ color: '#fff', fontWeight: 800, fontSize: '1.2rem' }}>CódigoNexo.</div>
+        <div style={{ color: 'var(--color-text)', fontWeight: 800, fontSize: '1.2rem' }}>CódigoNexo.</div>
         <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar menú">
           <X size={24} />
         </button>

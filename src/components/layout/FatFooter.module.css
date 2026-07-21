@@ -1,9 +1,9 @@
 .footer {
-  background: #0a0a0c;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
   padding: 4rem 2rem 2rem;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-family-body);
 }
 
 .grid {
@@ -33,15 +33,15 @@
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-display);
   font-weight: 800;
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--color-text);
   letter-spacing: -0.5px;
 }
 
 .tagline {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-subtle);
   line-height: 1.6;
   max-width: 300px;
 }
@@ -55,24 +55,24 @@
 .title {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .link {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-faint);
   text-decoration: none;
   transition: color 0.2s ease;
   font-size: 0.95rem;
 }
 
 .link:hover {
-  color: #3b82f6;
+  color: var(--color-primary);
 }
 
 .bottom {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +82,7 @@
 }
 
 .copyright {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-disabled);
   font-size: 0.85rem;
 }
 

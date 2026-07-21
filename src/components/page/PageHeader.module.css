@@ -17,27 +17,27 @@
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-display);
   font-weight: 700;
   font-size: var(--font-size-h2);
   line-height: 1.2;
   letter-spacing: -0.5px;
   text-transform: uppercase;
   margin-bottom: var(--space-sm);
-  color: #fff;
+  color: var(--color-text);
 }
 
 .line {
   width: 60px;
   height: 4px;
-  background-color: #3b82f6;
-  border-radius: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-indicator);
   margin-bottom: var(--space-md);
 }
 
 .subtitle {
   font-size: var(--font-size-body);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-subtle);
   max-width: 700px;
   line-height: 1.6;
 }

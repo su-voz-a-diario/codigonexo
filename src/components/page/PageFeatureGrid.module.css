@@ -22,12 +22,12 @@
   display: block;
   font-weight: 600;
   font-size: var(--font-size-body);
-  color: #fff;
+  color: var(--color-text);
   margin-bottom: 0.25rem;
 }
 
 .desc {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-subtle);
   font-size: var(--font-size-sm);
   line-height: 1.5;
 }
