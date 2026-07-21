@@ -1,4 +1,4 @@
-import { Cloud, Code, Globe, Layers, List, Network, Rocket, Shield, Smartphone } from "lucide-react";
+import { Building2, Cloud, Code, Cpu, GitBranch, Globe, Layers, List, Network, Rocket, Shield, Smartphone } from "lucide-react";
 
 export const navigationConfig = {
   mainNav: [
@@ -15,10 +15,18 @@ export const navigationConfig = {
       ]
     },
     {
+      title: "Empresa",
+      items: [
+        { title: "Nosotros", href: "/nosotros", description: "Cómo trabajamos y qué puede esperar un cliente.", icon: Building2 },
+        { title: "Metodología", href: "/metodologia", description: "Etapas para descubrir, diseñar, construir y operar.", icon: Layers },
+        { title: "Proceso", href: "/proceso", description: "Qué ocurre desde el primer contacto hasta el soporte.", icon: GitBranch },
+        { title: "Tecnologías", href: "/tecnologias", description: "Criterios para seleccionar herramientas y stack.", icon: Cpu },
+      ]
+    },
+    {
       title: "Trust",
       items: [
         { title: "Seguridad & Compliance", href: "/trust/seguridad-compliance", description: "Protección de datos y SLAs.", icon: Shield },
-        { title: "Nosotros", href: "/#nosotros", description: "Conoce a nuestros ingenieros.", icon: Layers },
         { title: "Portafolio", href: "/#portafolio", description: "Proyectos y casos presentados en el home.", icon: Rocket },
       ]
     }
@@ -64,9 +72,12 @@ export const navigationConfig = {
       { title: "Desarrollo Web", href: "/servicios/desarrollo-web" },
     ],
     empresa: [
+      { title: "Nosotros", href: "/nosotros" },
+      { title: "Metodología", href: "/metodologia" },
+      { title: "Proceso", href: "/proceso" },
+      { title: "Tecnologías", href: "/tecnologias" },
       { title: "Portafolio", href: "/#portafolio" },
       { title: "Seguridad y Compliance", href: "/trust/seguridad-compliance" },
-      { title: "Nosotros", href: "/#nosotros" },
       { title: "Contacto", href: "/#contacto" }
     ],
     legal: [] as { title: string; href: string }[]

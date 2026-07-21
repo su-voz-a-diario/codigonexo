@@ -8,6 +8,10 @@ const SITE_URL = 'https://codigonexo.mx';
 
 const routeLabels: Record<string, string> = {
   servicios: 'Servicios',
+  nosotros: 'Nosotros',
+  metodologia: 'Metodología',
+  proceso: 'Proceso',
+  tecnologias: 'Tecnologías',
   trust: 'Trust',
   'seguridad-compliance': 'Seguridad y Compliance',
   'desarrollo-software': 'Desarrollo de software',
@@ -25,6 +29,10 @@ const routeLabels: Record<string, string> = {
 
 const linkableBreadcrumbs = new Set([
   '/',
+  '/nosotros/',
+  '/metodologia/',
+  '/proceso/',
+  '/tecnologias/',
   '/servicios/',
   '/servicios/desarrollo-software/',
   '/servicios/desarrollo-web/',
