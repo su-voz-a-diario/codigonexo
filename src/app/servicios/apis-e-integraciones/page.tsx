@@ -51,6 +51,8 @@ export default function ApisIntegraciones() {
         title={<>Desarrollo de APIs e <span style={{ color: '#3b82f6' }}>Integración de Sistemas</span></>}
         subtitle="Construimos puentes tecnológicos seguros. Conectamos aplicaciones heredadas, ERPs y plataformas modernas a través de arquitecturas de microservicios."
         withCTA
+        ctaLabel="Evaluar integración"
+        microcopy="Revisaremos los sistemas involucrados, dependencias técnicas y riesgos de integración antes de proponer una ruta."
       />
 
       <PageSection theme="dark">
@@ -90,7 +92,9 @@ export default function ApisIntegraciones() {
           
           <PageCTA 
             title="¿Tus sistemas no se comunican entre sí?" 
-            subtitle="Contacta a un arquitecto de software hoy mismo."
+            subtitle="Evaluemos la integración necesaria y los sistemas que deben conectarse."
+            ctaLabel="Evaluar integración"
+            microcopy="Analizaremos endpoints, restricciones y flujos de datos para definir el siguiente paso técnico."
           />
         </PageContainer>
       </PageSection>

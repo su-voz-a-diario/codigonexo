@@ -30,7 +30,7 @@ export default function DesarrolloSoftwarePage() {
     <>
       <ServiceSchema 
         name="Desarrollo de Software Empresarial"
-        description="Ingeniería de software de alto nivel para resolver problemas complejos de negocio, garantizando escalabilidad, seguridad y rendimiento."
+        description="Ingeniería de software para resolver problemas complejos de negocio con criterios de escalabilidad, seguridad y rendimiento."
         url="https://codigonexo.mx/servicios/desarrollo-software"
       />
       
@@ -38,6 +38,8 @@ export default function DesarrolloSoftwarePage() {
         title={<>Ingeniería de Software<br />para Misión Crítica</>}
         subtitle="Aceleramos la transformación digital de corporativos mediante plataformas diseñadas para escalar, integrarse y evolucionar con su modelo de negocio."
         withCTA
+        ctaLabel="Solicitar estimación técnica"
+        microcopy="Revisaremos el contexto del proyecto y coordinaremos una conversación técnica para entender alcance, riesgos y prioridades."
       />
 
       <PageSection>
@@ -95,8 +97,8 @@ export default function DesarrolloSoftwarePage() {
           <PageGrid columns={2}>
             <PageIconCard 
               icon="Zap"
-              title="Rendimiento Garantizado"
-              text="Nuestras aplicaciones están optimizadas para latencias mínimas y carga concurrente masiva, protegiendo la experiencia del usuario."
+              title="Rendimiento Planificado"
+              text="Diseñamos aplicaciones con criterios de latencia, concurrencia y estabilidad definidos desde la arquitectura."
             />
             <PageIconCard 
               icon="GitBranch"
@@ -139,8 +141,8 @@ export default function DesarrolloSoftwarePage() {
           <PageFAQ 
             faqs={[
               {
-                question: "¿Cómo garantizan la calidad del código?",
-                answer: "Utilizamos tipado estricto (TypeScript, Go), cobertura de pruebas automatizadas (>80%) y pipelines de CI/CD que bloquean despliegues si el código no cumple los estándares arquitectónicos."
+                question: "¿Cómo aseguran la calidad del código?",
+                answer: "Utilizamos tipado estricto, pruebas automatizadas y pipelines de CI/CD para detectar problemas antes del despliegue y mantener estándares consistentes."
               },
               {
                 question: "¿Se integran con nuestros sistemas actuales (SAP, Salesforce, etc.)?",
@@ -148,11 +150,11 @@ export default function DesarrolloSoftwarePage() {
               },
               {
                 question: "¿Quién es el propietario intelectual del código?",
-                answer: "Su empresa. Al finalizar el proyecto y saldar la totalidad, entregamos el repositorio completo, la documentación y los derechos absolutos sobre el producto construido."
+                answer: "La propiedad del código se define contractualmente. En proyectos a la medida, entregamos repositorio, documentación y los derechos acordados sobre el producto construido."
               },
               {
                 question: "¿Ofrecen soporte post-lanzamiento?",
-                answer: "Por supuesto. Ofrecemos SLAs de soporte, monitorización activa, parches de seguridad y bolsas de horas para evolución continua del producto."
+                answer: "Sí. Podemos estructurar soporte post-lanzamiento, monitorización, parches de seguridad y bolsas de horas según las necesidades del proyecto."
               }
             ]}
           />
@@ -161,7 +163,9 @@ export default function DesarrolloSoftwarePage() {
 
       <PageCTA 
         title="¿Listo para escalar su infraestructura?" 
-        subtitle="Agende una consultoría técnica con nuestros Arquitectos de Software."
+        subtitle="Revisemos los objetivos, restricciones técnicas y alcance inicial de la plataforma."
+        ctaLabel="Solicitar estimación técnica"
+        microcopy="Analizaremos tu caso y programaremos una llamada técnica para revisar el proyecto."
       />
     </>
   );

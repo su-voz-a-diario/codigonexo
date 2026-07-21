@@ -13,7 +13,7 @@ import ServiceSchema from '@/components/seo/ServiceSchema';
 
 export const metadata: Metadata = {
   title: 'Soluciones de Inteligencia Artificial | CódigoNexo',
-  description: 'Automatización cognitiva y agentes autónomos. Integramos IA generativa (LLMs) a los procesos de su empresa para multiplicar su eficiencia.',
+  description: 'Automatización cognitiva y agentes autónomos. Integramos IA generativa (LLMs) a procesos empresariales con criterios de seguridad y utilidad operativa.',
   alternates: {
     canonical: 'https://codigonexo.mx/servicios/inteligencia-artificial',
   },
@@ -32,6 +32,8 @@ export default function IAPage() {
         title={<>Inteligencia Artificial<br />Aplicada a Negocios</>}
         subtitle="No vendemos chatbots básicos. Diseñamos Agentes Autónomos y sistemas cognitivos (RAG) integrados a los datos privados de su empresa para automatizar flujos críticos."
         withCTA
+        ctaLabel="Analizar un caso de uso"
+        microcopy="Revisaremos el proceso, la calidad de los datos y la viabilidad técnica antes de proponer una implementación."
       />
 
       <PageSection>
@@ -63,7 +65,7 @@ export default function IAPage() {
             <PageIconCard 
               icon="Bot"
               title="Agentes Autónomos (RAG)"
-              text="Asistentes corporativos que consumen sus manuales internos, bases de datos y documentaciones para brindar respuestas precisas y referenciadas."
+              text="Asistentes corporativos que consultan manuales internos, bases de datos y documentación para entregar respuestas trazables."
             />
             <PageIconCard 
               icon="FileText"
@@ -86,7 +88,7 @@ export default function IAPage() {
             <PageIconCard 
               icon="ShieldAlert"
               title="Privacidad Total de Datos"
-              text="Sus datos empresariales nunca se utilizan para entrenar modelos públicos. Implementamos barreras de seguridad (Data Fences) de nivel corporativo."
+              text="Diseñamos la integración para separar datos privados, controlar accesos y reducir exposición innecesaria de información sensible."
             />
             <PageIconCard 
               icon="Settings"
@@ -108,7 +110,7 @@ export default function IAPage() {
               },
               {
                 title: "Prototipo (PoC)",
-                description: "En semanas, construimos un modelo inicial para validar que la IA es capaz de ejecutar la tarea con alta precisión (baja tasa de alucinación)."
+                description: "Construimos un modelo inicial para validar si la IA puede ejecutar la tarea con resultados útiles y medibles."
               },
               {
                 title: "Ingeniería de Datos y RAG",
@@ -134,11 +136,11 @@ export default function IAPage() {
               },
               {
                 question: "¿Qué es RAG (Retrieval-Augmented Generation)?",
-                answer: "Es una técnica donde, antes de que la IA responda, primero busca la respuesta en sus documentos corporativos privados. Esto elimina las 'alucinaciones' y asegura que las respuestas sean 100% precisas respecto a las políticas de su empresa."
+                answer: "Es una técnica donde, antes de responder, la IA busca contexto en documentos corporativos privados. Esto ayuda a reducir respuestas inventadas y mejora la trazabilidad."
               },
               {
                 question: "¿Es seguro enviar datos corporativos a la nube?",
-                answer: "Configuramos instancias empresariales (ej. Azure OpenAI, AWS Bedrock) que garantizan por contrato que los datos no persisten, no se usan para entrenamiento y cumplen normativas (HIPAA, SOC2)."
+                answer: "Evaluamos opciones empresariales como Azure OpenAI o AWS Bedrock y definimos controles de privacidad, retención y acceso según los requisitos del proyecto."
               }
             ]}
           />
@@ -146,8 +148,10 @@ export default function IAPage() {
       </PageSection>
 
       <PageCTA 
-        title="Multiplique la capacidad operativa de su empresa" 
-        subtitle="Descubra cómo los modelos fundacionales pueden integrarse a su cadena de valor."
+        title="Evalúe una oportunidad real de automatización" 
+        subtitle="Identifiquemos un caso de uso viable antes de invertir en una implementación completa."
+        ctaLabel="Analizar un caso de uso"
+        microcopy="Revisaremos el proceso, los datos disponibles y los riesgos técnicos para definir el siguiente paso."
       />
     </>
   );

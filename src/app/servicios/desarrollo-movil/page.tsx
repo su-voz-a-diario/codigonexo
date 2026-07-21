@@ -49,21 +49,23 @@ export default function DesarrolloMovil() {
       
       <PageHero 
         title={<>Desarrollo de Aplicaciones <span style={{ color: '#3b82f6' }}>Móviles</span></>}
-        subtitle="Ponemos el núcleo de tu negocio en el bolsillo de tus usuarios. Desarrollamos Apps robustas, offline-first y preparadas para millones de descargas."
+        subtitle="Diseñamos aplicaciones móviles para procesos empresariales que requieren rendimiento, seguridad y operación confiable en campo."
         withCTA
+        ctaLabel="Analizar aplicación móvil"
+        microcopy="Revisaremos el objetivo de la app, usuarios, plataformas y restricciones técnicas para estimar el enfoque adecuado."
       />
 
       <PageSection theme="dark">
         <PageContainer>
           <PageHeader 
-            title="Ingeniería Mobile de Clase Mundial" 
-            subtitle="Evitamos las fallas, pantallas blancas y consumos excesivos de batería que plagan a las aplicaciones mal construidas."
+            title="Ingeniería Mobile para Entornos Empresariales" 
+            subtitle="Diseñamos aplicaciones con criterios de rendimiento, estabilidad, seguridad y experiencia de uso en cada plataforma."
           />
           <PageGrid columns={3}>
             <PageIconCard 
               icon="Smartphone"
               title="iOS (Swift) y Android (Kotlin)"
-              text="Desarrollo nativo puro cuando tu aplicación demanda exprimir al máximo el rendimiento del hardware, la cámara o la biometría."
+              text="Desarrollo nativo cuando la aplicación requiere acceso avanzado a hardware, cámara, biometría o rendimiento específico."
             />
             <PageIconCard 
               icon="Layers"
@@ -90,7 +92,9 @@ export default function DesarrolloMovil() {
           
           <PageCTA 
             title="Lanza tu aplicación móvil al mercado" 
-            subtitle="Agendemos una sesión técnica para estimar la arquitectura y los tiempos."
+            subtitle="Revisemos la arquitectura, plataformas objetivo y alcance inicial de la aplicación."
+            ctaLabel="Analizar aplicación móvil"
+            microcopy="Analizaremos tu caso y coordinaremos una llamada técnica para definir el enfoque de desarrollo."
           />
         </PageContainer>
       </PageSection>

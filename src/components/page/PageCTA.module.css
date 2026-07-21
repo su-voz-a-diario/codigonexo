@@ -20,3 +20,11 @@
   margin-bottom: var(--space-lg);
   font-size: var(--font-size-body);
 }
+
+.microcopy {
+  color: var(--color-text-subtle);
+  margin: var(--space-sm) auto 0;
+  max-width: 620px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

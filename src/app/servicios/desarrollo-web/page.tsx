@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const processData = [
   {
     title: "1. Auditoría de Core Web Vitals",
-    description: "Analizamos tu sitio actual o planeamos la arquitectura de tu nueva App para garantizar un Largest Contentful Paint (LCP) inferior a 2.5 segundos."
+    description: "Analizamos tu sitio actual o planeamos la arquitectura de tu nueva aplicación con foco en Core Web Vitals y rendimiento percibido."
   },
   {
     title: "2. Arquitectura de Estado y Caché",
@@ -29,7 +29,7 @@ const processData = [
   },
   {
     title: "3. Ingeniería Frontend (React/Next.js)",
-    description: "Construimos componentes reutilizables, modulares y estandarizados, garantizando que el código sea mantenible por años."
+    description: "Construimos componentes reutilizables, modulares y estandarizados para facilitar mantenimiento y evolución."
   },
   {
     title: "4. Auditoría de Seguridad Web",
@@ -49,8 +49,10 @@ export default function DesarrolloWeb() {
       
       <PageHero 
         title={<>Desarrollo Web de <span style={{ color: '#3b82f6' }}>Alto Rendimiento</span></>}
-        subtitle="Construimos plataformas rápidas, seguras y preparadas para millones de usuarios. Adiós al código espagueti y a los tiempos de carga lentos."
+        subtitle="Construimos plataformas web rápidas, seguras y mantenibles para productos que necesitan crecer sin perder estabilidad."
         withCTA
+        ctaLabel="Evaluar proyecto web"
+        microcopy="Revisaremos el producto, sus usuarios y restricciones técnicas para definir una arquitectura adecuada."
       />
 
       <PageSection theme="dark">
@@ -68,7 +70,7 @@ export default function DesarrolloWeb() {
             <PageIconCard 
               icon="Zap"
               title="Server-Side Rendering (SSR)"
-              text="Utilizamos Next.js para renderizar la interfaz en el servidor. Obtendrás un SEO perfecto y tiempos de carga imperceptibles."
+              text="Utilizamos Next.js para mejorar renderizado, indexación y tiempos de carga según la necesidad del proyecto."
             />
             <PageIconCard 
               icon="Globe"
@@ -84,13 +86,15 @@ export default function DesarrolloWeb() {
           <PageHeader 
             title="Proceso de Ingeniería Web" 
             align="left" 
-            subtitle="Calidad de software garantizada desde el primer componente."
+            subtitle="Calidad de software incorporada desde la arquitectura y el diseño de componentes."
           />
           <PageFeatureGrid features={processData} />
           
           <PageCTA 
             title="¿Tu aplicación web se siente lenta u obsoleta?" 
-            subtitle="Hablemos de cómo una arquitectura moderna puede transformar tu negocio."
+            subtitle="Revisemos rendimiento, arquitectura y oportunidades de mejora del producto."
+            ctaLabel="Evaluar proyecto web"
+            microcopy="Analizaremos tu contexto y coordinaremos una llamada técnica para revisar alternativas."
           />
         </PageContainer>
       </PageSection>

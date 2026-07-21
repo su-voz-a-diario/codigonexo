@@ -29,7 +29,7 @@ const processData = [
   },
   {
     title: "3. Selección de Tecnología (Tech Stack)",
-    description: "Elegimos objetivamente entre las herramientas del mercado para garantizar que utilices tecnología que sea soportada a largo plazo (LTS) y no una 'moda' pasajera."
+    description: "Evaluamos herramientas con criterios de soporte, madurez, compatibilidad y costo de mantenimiento."
   },
   {
     title: "4. Gobernanza y Plan de Ejecución",
@@ -49,8 +49,10 @@ export default function ConsultoriaTecnologica() {
       
       <PageHero 
         title={<>Consultoría en <span style={{ color: '#3b82f6' }}>Arquitectura de Software</span></>}
-        subtitle="Tomar malas decisiones tecnológicas hoy te costará millones mañana. Actuamos como tu aliado de ingeniería de alto nivel (vCTO) para trazar una ruta segura de escalabilidad."
+        subtitle="Ayudamos a tomar decisiones técnicas con mayor claridad, evaluando arquitectura, deuda técnica, riesgos y capacidad de evolución."
         withCTA
+        ctaLabel="Solicitar diagnóstico tecnológico"
+        microcopy="Revisaremos el contexto técnico y coordinaremos una conversación para entender objetivos, restricciones y prioridades."
       />
 
       <PageSection theme="dark">
@@ -63,7 +65,7 @@ export default function ConsultoriaTecnologica() {
             <PageIconCard 
               icon="SearchCode"
               title="Auditoría de Código y Arquitectura"
-              text="Revisión profunda (Due Diligence técnico) de aplicaciones existentes para medir la deuda técnica y preparar la empresa para certificaciones de seguridad."
+              text="Revisión técnica de aplicaciones existentes para identificar deuda técnica, riesgos de seguridad y oportunidades de mejora."
             />
             <PageIconCard 
               icon="Milestone"
@@ -73,7 +75,7 @@ export default function ConsultoriaTecnologica() {
             <PageIconCard 
               icon="UsersRound"
               title="Acompañamiento a Equipos"
-              text="Nuestros Principal Engineers guían a tu equipo de desarrollo interno en la adopción de las mejores prácticas (Clean Code, TDD, CI/CD)."
+              text="Acompañamos a equipos internos en la adopción de prácticas de ingeniería como Clean Code, pruebas y CI/CD."
             />
           </PageGrid>
         </PageContainer>
@@ -90,7 +92,9 @@ export default function ConsultoriaTecnologica() {
           
           <PageCTA 
             title="¿No estás seguro de si tu infraestructura está lista para escalar?" 
-            subtitle="Agenda una auditoría técnica inicial."
+            subtitle="Revisemos arquitectura, deuda técnica y prioridades antes de definir una ruta de evolución."
+            ctaLabel="Solicitar diagnóstico tecnológico"
+            microcopy="Analizaremos la información disponible y programaremos una llamada técnica para revisar hallazgos iniciales."
           />
         </PageContainer>
       </PageSection>

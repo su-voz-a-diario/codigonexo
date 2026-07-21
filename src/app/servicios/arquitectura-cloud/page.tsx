@@ -32,6 +32,8 @@ export default function ArquitecturaCloudPage() {
         title={<>Infraestructura Cloud<br />Diseñada para Escalar</>}
         subtitle="Migramos y modernizamos sus operaciones hacia entornos Cloud Nativos. Alta disponibilidad, despliegues sin interrupciones y reducción de costos operativos."
         withCTA
+        ctaLabel="Solicitar assessment de infraestructura"
+        microcopy="Revisaremos el estado actual de la infraestructura y los riesgos técnicos que conviene priorizar."
       />
 
       <PageSection>
@@ -41,7 +43,7 @@ export default function ArquitecturaCloudPage() {
             features={[
               {
                 title: "Costos de Inactividad (Downtime)",
-                description: "Cada minuto de caída cuesta miles de dólares y daña irremediablemente la reputación de la marca."
+                description: "Las interrupciones operativas pueden generar costos relevantes y afectar la confianza de clientes y equipos internos."
               },
               {
                 title: "Sobreaprovisionamiento",
@@ -49,7 +51,7 @@ export default function ArquitecturaCloudPage() {
               },
               {
                 title: "Recuperación ante Desastres (DRP)",
-                description: "Ausencia de respaldos geo-redundantes que garantizan la continuidad del negocio ante fallos físicos."
+                description: "Ausencia de respaldos y planes de recuperación que reduzcan el impacto ante fallos de infraestructura."
               }
             ]}
           />
@@ -86,7 +88,7 @@ export default function ArquitecturaCloudPage() {
             <PageIconCard 
               icon="Lock"
               title="Seguridad y Cumplimiento"
-              text="Configuraciones estandarizadas bajo normas internacionales (ISO 27001, SOC2). Redes privadas, WAFs y cifrado at-rest/in-transit."
+              text="Configuraciones alineadas con buenas prácticas de seguridad: redes privadas, WAFs y cifrado en reposo y tránsito."
             />
             <PageIconCard 
               icon="BarChart"
@@ -147,7 +149,9 @@ export default function ArquitecturaCloudPage() {
 
       <PageCTA 
         title="Eleve la resiliencia de sus operaciones" 
-        subtitle="Permítanos auditar su infraestructura actual y diseñar un roadmap de modernización Cloud."
+        subtitle="Revisemos su infraestructura actual y definamos prioridades para una modernización cloud ordenada."
+        ctaLabel="Solicitar assessment de infraestructura"
+        microcopy="Analizaremos el contexto técnico y coordinaremos una llamada para revisar hallazgos iniciales."
       />
     </>
   );

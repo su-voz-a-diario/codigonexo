@@ -51,6 +51,8 @@ export default function ModernizacionLegacy() {
         title={<>Modernización de Sistemas <span style={{ color: '#3b82f6' }}>Legacy</span></>}
         subtitle="Tu software crítico fue construido hace 10 años y hoy frena la innovación corporativa. Lo refactorizamos a tecnologías modernas sin detener tu operación."
         withCTA
+        ctaLabel="Evaluar deuda técnica"
+        microcopy="Revisaremos el estado actual del sistema, dependencias y riesgos antes de proponer una ruta de modernización."
       />
 
       <PageSection theme="dark">
@@ -84,13 +86,15 @@ export default function ModernizacionLegacy() {
           <PageHeader 
             title="Nuestra Metodología" 
             align="left" 
-            subtitle="Cómo reemplazamos motores de avión en pleno vuelo."
+            subtitle="Cómo reducimos riesgo al modernizar sistemas que siguen operando."
           />
           <PageFeatureGrid features={processData} />
           
           <PageCTA 
             title="¿Tu sistema core se está volviendo insostenible?" 
-            subtitle="Agenda una auditoría técnica para evaluar la viabilidad de refactorización."
+            subtitle="Evaluemos deuda técnica, dependencias y opciones de modernización progresiva."
+            ctaLabel="Evaluar deuda técnica"
+            microcopy="Analizaremos la información disponible y coordinaremos una llamada técnica para revisar riesgos y alternativas."
           />
         </PageContainer>
       </PageSection>

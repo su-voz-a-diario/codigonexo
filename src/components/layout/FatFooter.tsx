@@ -11,7 +11,7 @@ export default function FatFooter() {
         <div className={styles.brand}>
           <div className={styles.logo}>CódigoNexo.</div>
           <p className={styles.tagline}>
-            Ingeniería de software de clase mundial para empresas que exigen excelencia.
+            Ingeniería de software para empresas que requieren soluciones confiables y mantenibles.
           </p>
         </div>
         

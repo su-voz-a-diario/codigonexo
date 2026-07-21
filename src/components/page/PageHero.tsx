@@ -7,17 +7,22 @@ interface Props {
   subtitle?: string;
   align?: 'left' | 'center';
   withCTA?: boolean;
+  ctaLabel?: string;
+  microcopy?: string;
 }
 
-export default function PageHero({ title, subtitle, align = 'center', withCTA = false }: Props) {
+export default function PageHero({ title, subtitle, align = 'center', withCTA = false, ctaLabel, microcopy }: Props) {
   return (
     <div className={`${styles.hero} ${styles[align]}`}>
       <PageContainer width={align === 'center' ? 'narrow' : 'default'}>
         <h1 className={styles.title}>{title}</h1>
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {withCTA && (
-          <div className={styles.actions}>
-            <GlobalCTA variant="large" />
+          <div className={styles.actionGroup}>
+            <div className={styles.actions}>
+              <GlobalCTA variant="large" label={ctaLabel} />
+            </div>
+            {microcopy && <p className={styles.microcopy}>{microcopy}</p>}
           </div>
         )}
       </PageContainer>

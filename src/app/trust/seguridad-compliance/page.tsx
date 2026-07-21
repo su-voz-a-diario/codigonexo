@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 const slaData = [
   {
-    title: "Service Level Agreement (SLA) del 99.9%",
-    description: "Garantía contractual de disponibilidad para proyectos de misión crítica."
+    title: "Acuerdos de soporte y disponibilidad",
+    description: "Definición contractual de niveles de soporte según la criticidad del proyecto."
   },
   {
     title: "Backups Automatizados",
@@ -37,8 +37,8 @@ export default function SeguridadCompliance() {
       <Breadcrumbs />
       
       <PageHero 
-        title={<>Seguridad de Grado <span style={{ color: '#3b82f6' }}>Empresarial</span></>}
-        subtitle="Para corporativos e instituciones de alto perfil, el código bonito no es suficiente. Construimos arquitecturas resilientes con cifrado end-to-end y disponibilidad del 99.99%."
+        title={<>Seguridad para Entornos <span style={{ color: '#3b82f6' }}>Empresariales</span></>}
+        subtitle="Para proyectos corporativos, la arquitectura debe contemplar controles de seguridad, continuidad operativa y manejo responsable de datos desde el diseño."
       />
 
       <PageSection theme="dark">
@@ -47,17 +47,17 @@ export default function SeguridadCompliance() {
             <PageIconCard 
               icon="Shield"
               title="Cifrado en Tránsito y Reposo"
-              text="Todas las bases de datos y conexiones utilizan estándares AES-256 y TLS 1.3. Garantizamos que la información sensible siempre permanezca cifrada."
+              text="Diseñamos conexiones y almacenamiento con controles de cifrado adecuados para proteger información sensible."
             />
             <PageIconCard 
               icon="Server"
               title="Infraestructura Distribuida"
-              text="Desplegamos en AWS y Google Cloud usando clústeres redundantes. Si un nodo falla, el sistema escala automáticamente sin tiempo de inactividad."
+              text="Diseñamos despliegues en la nube con redundancia y estrategias de recuperación según los requisitos del proyecto."
             />
             <PageIconCard 
               icon="Lock"
               title="Propiedad y NDAs"
-              text="Todo el código fuente y la propiedad intelectual te pertenecen al 100%. Operamos bajo estrictos Acuerdos de Confidencialidad corporativos."
+              text="La propiedad intelectual, confidencialidad y acceso al código se definen de forma explícita en los acuerdos del proyecto."
             />
           </PageGrid>
         </PageContainer>
@@ -68,13 +68,15 @@ export default function SeguridadCompliance() {
           <PageHeader 
             title="Continuidad de Negocio" 
             align="left" 
-            subtitle="Nuestros procesos de mitigación de desastres aseguran que tu operación jamás se detenga."
+            subtitle="Nuestros procesos buscan reducir riesgos operativos y preparar la recuperación ante incidentes relevantes."
           />
           <PageFeatureGrid features={slaData} />
           
           <PageCTA 
             title="¿Necesitas una arquitectura a la medida?" 
-            subtitle="Agendemos una auditoría técnica sin compromiso."
+            subtitle="Revisemos los requisitos de seguridad, continuidad y soporte de tu proyecto."
+            ctaLabel="Revisar arquitectura de seguridad"
+            microcopy="Analizaremos el contexto técnico y coordinaremos una conversación para identificar riesgos y prioridades."
           />
         </PageContainer>
       </PageSection>

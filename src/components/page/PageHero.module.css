@@ -36,3 +36,25 @@
 .left .actions {
   justify-content: flex-start;
 }
+
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left .actionGroup {
+  align-items: flex-start;
+}
+
+.microcopy {
+  color: var(--color-text-subtle);
+  margin: var(--space-sm) auto 0;
+  max-width: 620px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.left .microcopy {
+  margin-left: 0;
+}

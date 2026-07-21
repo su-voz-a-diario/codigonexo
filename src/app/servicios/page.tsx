@@ -49,7 +49,9 @@ export default function ServiciosPage() {
         <PageContainer width="narrow">
           <PageCTA
             title="¿Necesitas priorizar una iniciativa?"
-            subtitle="Agenda una auditoría técnica y revisemos el mejor camino para tu proyecto."
+            subtitle="Revisemos el contexto del proyecto y definamos qué servicio corresponde a la necesidad actual."
+            ctaLabel="Solicitar orientación técnica"
+            microcopy="Analizaremos tu caso y coordinaremos una conversación para identificar la ruta más adecuada."
           />
         </PageContainer>
       </PageSection>

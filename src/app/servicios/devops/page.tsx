@@ -49,8 +49,10 @@ export default function DevOps() {
       
       <PageHero 
         title={<>Automatización <span style={{ color: '#3b82f6' }}>DevOps</span> y CI/CD</>}
-        subtitle="Transformamos despliegues manuales propensos a errores en pipelines automatizados de grado militar. Aumenta la velocidad de entrega de tu equipo de ingeniería."
+        subtitle="Convertimos despliegues manuales en pipelines auditables y repetibles para mejorar la velocidad y confiabilidad del equipo de ingeniería."
         withCTA
+        ctaLabel="Revisar pipeline actual"
+        microcopy="Revisaremos tu flujo de despliegue, entornos y riesgos operativos para identificar mejoras prioritarias."
       />
 
       <PageSection theme="dark">
@@ -68,12 +70,12 @@ export default function DevOps() {
             <PageIconCard 
               icon="TerminalSquare"
               title="Infraestructura como Código"
-              text="Adiós a la configuración manual de servidores. Todo el entorno se levanta con scripts de Terraform o Ansible auditables."
+              text="Definimos infraestructura mediante scripts auditables de Terraform o Ansible para reducir configuración manual."
             />
             <PageIconCard 
               icon="Activity"
               title="Observabilidad (APM)"
-              text="No esperes a que un cliente reporte un fallo. Implementamos sistemas de logs centralizados que alertan a tu equipo antes de que el problema escale."
+              text="Implementamos logs, métricas y alertas para detectar problemas operativos con mayor anticipación."
             />
           </PageGrid>
         </PageContainer>
@@ -89,8 +91,10 @@ export default function DevOps() {
           <PageFeatureGrid features={processData} />
           
           <PageCTA 
-            title="¿Desplegar te causa dolores de cabeza?" 
-            subtitle="Hablemos de cómo automatizar tu ciclo de desarrollo."
+            title="¿Tu pipeline de despliegue necesita más control?" 
+            subtitle="Revisemos el ciclo actual de desarrollo, pruebas y publicación."
+            ctaLabel="Revisar pipeline actual"
+            microcopy="Analizaremos tu flujo actual y coordinaremos una llamada para priorizar mejoras de automatización."
           />
         </PageContainer>
       </PageSection>

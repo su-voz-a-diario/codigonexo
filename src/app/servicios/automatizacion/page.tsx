@@ -49,8 +49,10 @@ export default function Automatizacion() {
       
       <PageHero 
         title={<>Automatización de <span style={{ color: '#3b82f6' }}>Procesos Operativos</span></>}
-        subtitle="Las tareas repetitivas destruyen el talento de tu equipo. Construimos flujos de software que conectan tus sistemas para operar 24/7 sin intervención manual."
+        subtitle="Identificamos tareas repetitivas y conectamos sistemas para reducir trabajo manual, errores operativos y dependencia de procesos aislados."
         withCTA
+        ctaLabel="Detectar procesos automatizables"
+        microcopy="Revisaremos el flujo actual y las herramientas involucradas para identificar oportunidades viables de automatización."
       />
 
       <PageSection theme="dark">
@@ -73,7 +75,7 @@ export default function Automatizacion() {
             <PageIconCard 
               icon="TrendingDown"
               title="Reducción de Errores"
-              text="Un sistema automatizado no comete errores tipográficos. Garantizamos integridad de datos del 100% en conciliaciones o transferencias de información."
+              text="Los flujos automatizados reducen captura manual y permiten definir validaciones consistentes para transferencia de información."
             />
           </PageGrid>
         </PageContainer>
@@ -90,7 +92,9 @@ export default function Automatizacion() {
           
           <PageCTA 
             title="¿Tu equipo gasta horas copiando y pegando datos?" 
-            subtitle="Contacta a nuestros expertos en automatización."
+            subtitle="Identifiquemos procesos repetitivos que puedan automatizarse de forma segura."
+            ctaLabel="Detectar procesos automatizables"
+            microcopy="Analizaremos tu operación actual y coordinaremos una llamada para priorizar oportunidades."
           />
         </PageContainer>
       </PageSection>
