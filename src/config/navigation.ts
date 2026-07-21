@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Building2, Cloud, Code, Cpu, GitBranch, Globe, Layers, List, Network, Rocket, Shield, Smartphone } from "lucide-react";
+import { BookOpen, BriefcaseBusiness, Building2, Cloud, Code, Cpu, GitBranch, Globe, Layers, List, Network, Rocket, Shield, Smartphone } from "lucide-react";
 
 export const navigationConfig = {
   mainNav: [
@@ -22,6 +22,7 @@ export const navigationConfig = {
         { title: "Proceso", href: "/proceso", description: "Qué ocurre desde el primer contacto hasta el soporte.", icon: GitBranch },
         { title: "Tecnologías", href: "/tecnologias", description: "Criterios para seleccionar herramientas y stack.", icon: Cpu },
         { title: "Proyectos Destacados", href: "/proyectos", description: "Proyectos reales documentados con contexto técnico.", icon: BriefcaseBusiness },
+        { title: "Centro de Conocimiento", href: "/recursos", description: "Guías para decidir con claridad antes de invertir.", icon: BookOpen },
       ]
     },
     {
@@ -78,6 +79,7 @@ export const navigationConfig = {
       { title: "Proceso", href: "/proceso" },
       { title: "Tecnologías", href: "/tecnologias" },
       { title: "Proyectos Destacados", href: "/proyectos" },
+      { title: "Centro de Conocimiento", href: "/recursos" },
       { title: "Portafolio", href: "/#portafolio" },
       { title: "Seguridad y Compliance", href: "/trust/seguridad-compliance" },
       { title: "Contacto", href: "/#contacto" }
