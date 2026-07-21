@@ -1,0 +1,34 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 1.5rem 2rem;
+  margin-top: 80px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.current {
+  color: #fff;
+  font-weight: 500;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.3);
+}
