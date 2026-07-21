@@ -4,6 +4,54 @@ import { usePathname } from 'next/navigation';
 import { ChevronRight, Home } from 'lucide-react';
 import styles from './Breadcrumbs.module.css';
 
+const SITE_URL = 'https://codigonexo.mx';
+
+const routeLabels: Record<string, string> = {
+  servicios: 'Servicios',
+  trust: 'Trust',
+  'seguridad-compliance': 'Seguridad y Compliance',
+  'desarrollo-software': 'Desarrollo de software',
+  'desarrollo-web': 'Desarrollo web',
+  'desarrollo-movil': 'Desarrollo móvil',
+  'desarrollo-a-la-medida': 'Desarrollo a la medida',
+  'apis-e-integraciones': 'APIs e integraciones',
+  automatizacion: 'Automatización',
+  'arquitectura-cloud': 'Arquitectura cloud',
+  devops: 'DevOps',
+  'inteligencia-artificial': 'Inteligencia artificial',
+  'modernizacion-legacy': 'Modernización legacy',
+  'consultoria-tecnologica': 'Consultoría tecnológica',
+};
+
+const linkableBreadcrumbs = new Set([
+  '/',
+  '/servicios/',
+  '/servicios/desarrollo-software/',
+  '/servicios/desarrollo-web/',
+  '/servicios/desarrollo-movil/',
+  '/servicios/desarrollo-a-la-medida/',
+  '/servicios/apis-e-integraciones/',
+  '/servicios/automatizacion/',
+  '/servicios/arquitectura-cloud/',
+  '/servicios/devops/',
+  '/servicios/inteligencia-artificial/',
+  '/servicios/modernizacion-legacy/',
+  '/servicios/consultoria-tecnologica/',
+  '/trust/seguridad-compliance/',
+]);
+
+function getLabel(path: string) {
+  return routeLabels[path] ?? path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' ');
+}
+
+function withTrailingSlash(href: string) {
+  return href.endsWith('/') ? href : `${href}/`;
+}
+
+function getLinkableHref(href: string) {
+  return linkableBreadcrumbs.has(href) ? href : null;
+}
+
 export default function Breadcrumbs() {
   const pathname = usePathname();
   const paths = pathname.split('/').filter(p => p);
@@ -18,15 +66,16 @@ export default function Breadcrumbs() {
         "@type": "ListItem",
         "position": 1,
         "name": "Inicio",
-        "item": "https://codigonexo.com/"
+        "item": `${SITE_URL}/`
       },
       ...paths.map((path, index) => {
-        const url = `https://codigonexo.com/${paths.slice(0, index + 1).join('/')}`;
+        const href = withTrailingSlash(`/${paths.slice(0, index + 1).join('/')}`);
+        const itemHref = getLinkableHref(href);
         return {
           "@type": "ListItem",
           "position": index + 2,
-          "name": path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' '),
-          "item": url
+          "name": getLabel(path),
+          ...(itemHref ? { "item": `${SITE_URL}${itemHref}` } : {})
         };
       })
     ]
@@ -46,16 +95,19 @@ export default function Breadcrumbs() {
         </div>
         {paths.map((path, index) => {
           const isLast = index === paths.length - 1;
-          const href = `/${paths.slice(0, index + 1).join('/')}`;
-          const title = path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' ');
+          const href = withTrailingSlash(`/${paths.slice(0, index + 1).join('/')}`);
+          const linkableHref = getLinkableHref(href);
+          const title = getLabel(path);
 
           return (
             <div key={path} className={styles.item}>
               <ChevronRight size={14} className={styles.separator} />
               {isLast ? (
                 <span className={styles.current} aria-current="page">{title}</span>
+              ) : linkableHref ? (
+                <Link href={linkableHref} className={styles.link}>{title}</Link>
               ) : (
-                <Link href={href} className={styles.link}>{title}</Link>
+                <span className={styles.current}>{title}</span>
               )}
             </div>
           );

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Modernización de Sistemas Legacy | CódigoNexo',
   description: 'Refactorización y migración de software obsoleto a arquitecturas modernas (Microservicios, React, Node.js) sin interrumpir la operación del negocio.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/modernizacion-legacy'
+    canonical: 'https://codigonexo.mx/servicios/modernizacion-legacy'
   }
 };
 

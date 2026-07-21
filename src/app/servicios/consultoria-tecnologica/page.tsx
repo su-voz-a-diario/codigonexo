@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Consultoría Tecnológica para Empresas | CódigoNexo',
   description: 'Firma de consultoría de software. Alineamos tu estrategia de tecnología corporativa mediante auditorías de arquitectura, seguridad y liderazgo interino (vCTO).',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/consultoria-tecnologica'
+    canonical: 'https://codigonexo.mx/servicios/consultoria-tecnologica'
   }
 };
 

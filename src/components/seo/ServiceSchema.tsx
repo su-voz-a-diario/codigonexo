@@ -1,4 +1,6 @@
 export default function ServiceSchema({ name, description, url }: { name: string, description: string, url: string }) {
+  const absoluteUrl = url.startsWith('http') ? url : `https://codigonexo.mx${url}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -9,7 +11,7 @@ export default function ServiceSchema({ name, description, url }: { name: string
       "name": "CódigoNexo",
       "url": "https://codigonexo.mx"
     },
-    "url": url
+    "url": absoluteUrl
   };
 
   return (

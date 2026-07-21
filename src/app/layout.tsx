@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import FatFooter from "@/components/layout/FatFooter";
 
 export const metadata = {
+  metadataBase: new URL("https://codigonexo.mx"),
   title: "CódigoNexo | Ingeniería de Software a la Medida",
   description: "Firma consultora de ingeniería de software. Construimos infraestructuras web y móviles resilientes, escalables y seguras.",
 };

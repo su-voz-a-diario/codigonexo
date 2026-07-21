@@ -5,6 +5,8 @@ interface Props {
 }
 
 export default function ServiceSchema({ name, description, url }: Props) {
+  const absoluteUrl = url.startsWith('http') ? url : `https://codigonexo.mx${url}`;
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -13,9 +15,9 @@ export default function ServiceSchema({ name, description, url }: Props) {
     "provider": {
       "@type": "Organization",
       "name": "CódigoNexo",
-      "url": "https://codigonexo.com"
+      "url": "https://codigonexo.mx"
     },
-    "url": `https://codigonexo.com${url}`,
+    "url": absoluteUrl,
     "areaServed": "Worldwide"
   };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Consultoría DevOps & CI/CD | CódigoNexo',
   description: 'Automatización de infraestructura y despliegues con Terraform, Kubernetes, Docker y GitHub Actions. Incrementamos la velocidad de entrega de tu equipo.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/devops'
+    canonical: 'https://codigonexo.mx/servicios/devops'
   }
 };
 

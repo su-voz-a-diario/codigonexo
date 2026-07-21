@@ -10,7 +10,7 @@ interface Props {
 export default function GlobalCTA({ variant = 'small', onClick }: Props) {
   return (
     <Link 
-      href="/contacto" 
+      href="/#contacto" 
       className={`${styles.cta} ${styles[variant]}`}
       onClick={onClick}
     >

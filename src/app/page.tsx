@@ -10,7 +10,7 @@ export default function Home() {
         {/*  HÉROE  */}
         <section id="inicio" className="hero">
             <div className="hero-content fade-in-up">
-                <img src="assets/images/logo-solo.webp" alt="CódigoNexo Icon" className="hero-logo-solo" width="3932" height="3627" fetchPriority="high" />
+                <img src="/assets/images/logo-solo.webp" alt="CódigoNexo Icon" className="hero-logo-solo" width="3932" height="3627" fetchPriority="high" />
                 <h1>ACELERAMOS TU NEGOCIO<br />CON SOFTWARE A LA MEDIDA</h1>
                 <p>En CódigoNexo construimos plataformas web, aplicaciones y software a la medida para empresas que buscan automatizar y escalar sus operaciones con tecnología de nivel premium.</p>
                 <div className="hero-buttons">

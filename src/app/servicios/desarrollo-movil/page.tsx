@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Desarrollo de Aplicaciones Móviles | CódigoNexo',
   description: 'Desarrollo iOS y Android nativo y cross-platform. Construimos Apps empresariales escalables con Flutter, React Native y Swift.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/desarrollo-movil'
+    canonical: 'https://codigonexo.mx/servicios/desarrollo-movil'
   }
 };
 

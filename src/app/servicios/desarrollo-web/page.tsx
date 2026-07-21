@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Desarrollo Web de Alto Rendimiento | CódigoNexo',
   description: 'Aplicaciones web escalables, PWAs y arquitecturas Headless. Especialistas en React, Next.js y ecosistemas modernos para alta concurrencia.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/desarrollo-web'
+    canonical: 'https://codigonexo.mx/servicios/desarrollo-web'
   }
 };
 

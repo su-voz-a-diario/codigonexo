@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Automatización de Procesos de Negocio (BPA) | CódigoNexo',
   description: 'Desarrollamos bots y flujos de trabajo automatizados para eliminar tareas manuales. Integramos sistemas aislados para aumentar la eficiencia operativa.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/automatizacion'
+    canonical: 'https://codigonexo.mx/servicios/automatizacion'
   }
 };
 

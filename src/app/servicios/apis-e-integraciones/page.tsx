@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Desarrollo de APIs e Integraciones de Sistemas | CódigoNexo',
   description: 'Arquitectura de APIs REST y GraphQL. Conectamos software empresarial, ERPs (SAP, Oracle) y aplicaciones web a través de middlewares seguros.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/apis-e-integraciones'
+    canonical: 'https://codigonexo.mx/servicios/apis-e-integraciones'
   }
 };
 

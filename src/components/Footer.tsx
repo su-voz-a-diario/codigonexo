@@ -5,7 +5,7 @@ export default function Footer() {
             <div className="footer-grid">
                 <div>
                     <div className="footer-logo">
-                        <img src="assets/images/logo-transparente.webp" alt="CódigoNexo Logo" className="footer-brand-logo" width="2098" height="568" loading="lazy" decoding="async" />
+                        <img src="/assets/images/logo-transparente.webp" alt="CódigoNexo Logo" className="footer-brand-logo" width="2098" height="568" loading="lazy" decoding="async" />
                     </div>
                     <p style={{fontSize: '0.9rem'}}>Convertimos tus ideas en herramientas digitales.</p>
                 </div>
@@ -23,7 +23,7 @@ export default function Footer() {
                 <div className="footer-legal">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#" id="openPrivacyFooter">Aviso de Privacidad</a></li>
+                        <li><button type="button" id="openPrivacyFooter">Aviso de Privacidad</button></li>
                     </ul>
                 </div>
             </div>
