@@ -1,100 +1,154 @@
 import type { Metadata } from 'next';
-import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import ServiceSchema from '@/components/ui/ServiceSchema';
-import PageContainer from '@/components/page/PageContainer';
-import PageSection from '@/components/page/PageSection';
-import PageGrid from '@/components/page/PageGrid';
 import PageHero from '@/components/page/PageHero';
+import PageSection from '@/components/page/PageSection';
+import PageContainer from '@/components/page/PageContainer';
 import PageHeader from '@/components/page/PageHeader';
+import PageGrid from '@/components/page/PageGrid';
 import PageIconCard from '@/components/page/PageIconCard';
 import PageFeatureGrid from '@/components/page/PageFeatureGrid';
 import PageCTA from '@/components/page/PageCTA';
+import PageTimeline from '@/components/page/PageTimeline';
+import PageFAQ from '@/components/page/PageFAQ';
+import ServiceSchema from '@/components/seo/ServiceSchema';
 
 export const metadata: Metadata = {
-  title: 'Desarrollo con Inteligencia Artificial & LLMs | CódigoNexo',
-  description: 'Automatización B2B con Inteligencia Artificial. Integramos OpenAI, Claude, Vector Databases y LangChain para crear agentes y flujos cognitivos empresariales.',
+  title: 'Soluciones de Inteligencia Artificial | CódigoNexo',
+  description: 'Automatización cognitiva y agentes autónomos. Integramos IA generativa (LLMs) a los procesos de su empresa para multiplicar su eficiencia.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/inteligencia-artificial'
-  }
+    canonical: 'https://codigonexo.mx/servicios/inteligencia-artificial',
+  },
 };
 
-const processData = [
-  {
-    title: "1. Viabilidad y Estrategia de Datos",
-    description: "Evaluamos la calidad de tus datos corporativos para determinar si es viable un modelo RAG (Retrieval-Augmented Generation) o un Fine-Tuning de LLMs."
-  },
-  {
-    title: "2. Construcción de Pipelines (LangChain)",
-    description: "Desarrollamos los flujos orquestados donde el software extrae el contexto empresarial y lo inyecta al modelo cognitivo de forma segura."
-  },
-  {
-    title: "3. Privacidad y Seguridad (Vector DBs)",
-    description: "Tus datos confidenciales no entrenan modelos públicos. Los vectorizamos y aseguramos en clústeres privados (Pinecone/Milvus)."
-  },
-  {
-    title: "4. Integración al Ecosistema Core",
-    description: "Conectamos los motores de IA mediante APIs REST o GraphQL a tu ERP, CRM o plataforma web actual."
-  }
-];
-
-export default function InteligenciaArtificial() {
+export default function IAPage() {
   return (
-    <main>
+    <>
       <ServiceSchema 
-        name="Integración de Inteligencia Artificial Empresarial"
-        description="Desarrollo de automatizaciones con LLMs, arquitecturas RAG y Agentes Autónomos."
-        url="/servicios/inteligencia-artificial"
+        name="Soluciones de Inteligencia Artificial"
+        description="Integración de IA Generativa, agentes autónomos y análisis cognitivo en procesos corporativos."
+        url="https://codigonexo.mx/servicios/inteligencia-artificial"
       />
-      <Breadcrumbs />
       
       <PageHero 
-        title={<>Automatización Cognitiva con <span style={{ color: '#3b82f6' }}>Inteligencia Artificial</span></>}
-        subtitle="Dejamos atrás los chatbots de reglas básicas. Integramos LLMs avanzados (OpenAI, Claude, Gemini) con tus bases de datos privadas para resolver procesos operativos complejos en segundos."
+        title={<>Inteligencia Artificial<br />Aplicada a Negocios</>}
+        subtitle="No vendemos chatbots básicos. Diseñamos Agentes Autónomos y sistemas cognitivos (RAG) integrados a los datos privados de su empresa para automatizar flujos críticos."
         withCTA
       />
 
-      <PageSection theme="dark">
+      <PageSection>
         <PageContainer>
-          <PageHeader 
-            title="Ingeniería IA de Nivel Corporativo" 
-            subtitle="El reto no es llamar a una API, es asegurar que el modelo no alucine y que la información privada de tu corporativo nunca se filtre."
+          <PageHeader title="El Cuello de Botella Operativo" align="center" />
+          <PageFeatureGrid 
+            features={[
+              {
+                title: "Procesamiento Manual de Datos",
+                description: "Equipos enteros dedicados a extraer información de PDFs, facturas y correos electrónicos."
+              },
+              {
+                title: "Soporte Saturado",
+                description: "Tiempos de respuesta lentos ante clientes B2B debido al volumen de consultas técnicas o logísticas."
+              },
+              {
+                title: "Decisiones Desinformadas",
+                description: "Incapacidad para procesar el vasto conocimiento histórico de la empresa y extraer *insights* accionables."
+              }
+            ]}
           />
+        </PageContainer>
+      </PageSection>
+
+      <PageSection theme="darker">
+        <PageContainer>
+          <PageHeader title="Casos de Uso Empresariales" />
           <PageGrid columns={3}>
             <PageIconCard 
-              icon="Brain"
-              title="Arquitecturas RAG"
-              text="Conectamos la IA directamente a tus manuales, historiales o bases de datos internas para que sus respuestas sean 100% precisas y basadas en tu empresa."
-            />
-            <PageIconCard 
               icon="Bot"
-              title="Agentes Autónomos"
-              text="Sistemas capaces de tomar decisiones encadenadas (ej. leer un correo, extraer datos clave, validarlos en tu ERP y emitir una alerta)."
+              title="Agentes Autónomos (RAG)"
+              text="Asistentes corporativos que consumen sus manuales internos, bases de datos y documentaciones para brindar respuestas precisas y referenciadas."
             />
             <PageIconCard 
-              icon="Database"
-              title="Privacidad de Datos"
-              text="Garantizamos que tu data propietaria jamás alimente modelos públicos, implementando capas de anonimización y clústeres vectoriales cerrados."
+              icon="FileText"
+              title="Procesamiento Documental"
+              text="Extracción y clasificación automatizada de datos desde miles de documentos no estructurados (contratos, reportes médicos, legales)."
+            />
+            <PageIconCard 
+              icon="Brain"
+              title="Flujos Cognitivos"
+              text="IA capaz de evaluar, categorizar y tomar decisiones de baja fricción (ej. aprobación de créditos, triaje de soporte) orquestada mediante APIs."
             />
           </PageGrid>
         </PageContainer>
       </PageSection>
 
       <PageSection>
-        <PageContainer width="narrow">
-          <PageHeader 
-            title="Implementación Técnica" 
-            align="left" 
-            subtitle="Metodología rigurosa para llevar la IA de prueba de concepto a producción."
-          />
-          <PageFeatureGrid features={processData} />
-          
-          <PageCTA 
-            title="¿Listo para potenciar tu operación con IA?" 
-            subtitle="Nuestros Ingenieros en IA analizarán tus flujos de trabajo."
+        <PageContainer>
+          <PageHeader title="Diferenciadores Clave" align="center" />
+          <PageGrid columns={2}>
+            <PageIconCard 
+              icon="ShieldAlert"
+              title="Privacidad Total de Datos"
+              text="Sus datos empresariales nunca se utilizan para entrenar modelos públicos. Implementamos barreras de seguridad (Data Fences) de nivel corporativo."
+            />
+            <PageIconCard 
+              icon="Settings"
+              title="Orquestación Multi-Modelo"
+              text="Utilizamos la herramienta adecuada para el problema (OpenAI, Anthropic, Gemini, o Modelos Open Source auto-alojados para máxima confidencialidad)."
+            />
+          </PageGrid>
+        </PageContainer>
+      </PageSection>
+
+      <PageSection theme="darker">
+        <PageContainer>
+          <PageHeader title="Metodología de Implementación" />
+          <PageTimeline 
+            steps={[
+              {
+                title: "Viabilidad y Scope",
+                description: "Identificamos el proceso con mayor potencial de automatización (ROI) y evaluamos la calidad de sus datos base."
+              },
+              {
+                title: "Prototipo (PoC)",
+                description: "En semanas, construimos un modelo inicial para validar que la IA es capaz de ejecutar la tarea con alta precisión (baja tasa de alucinación)."
+              },
+              {
+                title: "Ingeniería de Datos y RAG",
+                description: "Conectamos el modelo a sus bases de datos reales mediante bases vectoriales (Pinecone/Weaviate) y cadenas de recuperación."
+              },
+              {
+                title: "Despliegue y Monitoreo",
+                description: "Lanzamiento a producción con sistemas de auditoría en la sombra para que humanos supervisen el rendimiento de la IA en tiempo real."
+              }
+            ]}
           />
         </PageContainer>
       </PageSection>
 
-    </main>
+      <PageSection>
+        <PageContainer>
+          <PageHeader title="Preguntas Frecuentes" />
+          <PageFAQ 
+            faqs={[
+              {
+                question: "¿La IA va a reemplazar a mi equipo?",
+                answer: "No. Nuestros sistemas actúan como 'Copilotos'. Asumen la carga cognitiva repetitiva para que su equipo humano se enfoque en el pensamiento estratégico y la supervisión."
+              },
+              {
+                question: "¿Qué es RAG (Retrieval-Augmented Generation)?",
+                answer: "Es una técnica donde, antes de que la IA responda, primero busca la respuesta en sus documentos corporativos privados. Esto elimina las 'alucinaciones' y asegura que las respuestas sean 100% precisas respecto a las políticas de su empresa."
+              },
+              {
+                question: "¿Es seguro enviar datos corporativos a la nube?",
+                answer: "Configuramos instancias empresariales (ej. Azure OpenAI, AWS Bedrock) que garantizan por contrato que los datos no persisten, no se usan para entrenamiento y cumplen normativas (HIPAA, SOC2)."
+              }
+            ]}
+          />
+        </PageContainer>
+      </PageSection>
+
+      <PageCTA 
+        title="Multiplique la capacidad operativa de su empresa" 
+        subtitle="Descubra cómo los modelos fundacionales pueden integrarse a su cadena de valor."
+      />
+    </>
   );
 }

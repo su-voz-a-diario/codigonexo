@@ -1,100 +1,154 @@
 import type { Metadata } from 'next';
-import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import ServiceSchema from '@/components/ui/ServiceSchema';
-import PageContainer from '@/components/page/PageContainer';
-import PageSection from '@/components/page/PageSection';
-import PageGrid from '@/components/page/PageGrid';
 import PageHero from '@/components/page/PageHero';
+import PageSection from '@/components/page/PageSection';
+import PageContainer from '@/components/page/PageContainer';
 import PageHeader from '@/components/page/PageHeader';
+import PageGrid from '@/components/page/PageGrid';
 import PageIconCard from '@/components/page/PageIconCard';
 import PageFeatureGrid from '@/components/page/PageFeatureGrid';
 import PageCTA from '@/components/page/PageCTA';
+import PageTimeline from '@/components/page/PageTimeline';
+import PageFAQ from '@/components/page/PageFAQ';
+import ServiceSchema from '@/components/seo/ServiceSchema';
 
 export const metadata: Metadata = {
   title: 'Arquitectura Cloud & DevOps | CódigoNexo',
-  description: 'Migramos y escalamos infraestructuras en AWS y Google Cloud. Construimos clústeres serverless y Kubernetes para alta disponibilidad.',
+  description: 'Migración, modernización y gestión de infraestructura en la nube. Operaciones resilientes, seguras y altamente disponibles para empresas.',
   alternates: {
-    canonical: 'https://codigonexo.com/servicios/arquitectura-cloud'
-  }
+    canonical: 'https://codigonexo.mx/servicios/arquitectura-cloud',
+  },
 };
 
-const processData = [
-  {
-    title: "1. Auditoría de Carga (Stress Testing)",
-    description: "Analizamos el comportamiento de tu infraestructura actual bajo estrés para identificar cuellos de botella y Single Points of Failure."
-  },
-  {
-    title: "2. Diseño Arquitectónico Híbrido/Multi-Cloud",
-    description: "Diseñamos la topología óptima en AWS/GCP garantizando resiliencia (Multi-AZ) y optimización de costos computacionales."
-  },
-  {
-    title: "3. Infraestructura como Código (IaC)",
-    description: "Desplegamos entornos inmutables utilizando Terraform. Todo cambio es versionado, auditable y reversible."
-  },
-  {
-    title: "4. Automatización CI/CD",
-    description: "Implementamos pipelines estrictos mediante GitHub Actions o GitLab CI para despliegues cero-downtime (Blue/Green Deployments)."
-  }
-];
-
-export default function ArquitecturaCloud() {
+export default function ArquitecturaCloudPage() {
   return (
-    <main>
+    <>
       <ServiceSchema 
-        name="Consultoría en Arquitectura Cloud"
-        description="Diseño e implementación de infraestructuras escalables en AWS y Google Cloud."
-        url="/servicios/arquitectura-cloud"
+        name="Arquitectura Cloud y DevOps"
+        description="Diseño, migración y gestión de infraestructura en la nube para alta disponibilidad y resiliencia corporativa."
+        url="https://codigonexo.mx/servicios/arquitectura-cloud"
       />
-      <Breadcrumbs />
       
       <PageHero 
-        title={<>Arquitectura Cloud de <span style={{ color: '#3b82f6' }}>Alto Rendimiento</span></>}
-        subtitle="Si tu sistema colapsa durante picos de tráfico, estás perdiendo dinero. Migramos, estabilizamos y automatizamos infraestructuras complejas en AWS y GCP para garantizar 99.99% de disponibilidad."
+        title={<>Infraestructura Cloud<br />Diseñada para Escalar</>}
+        subtitle="Migramos y modernizamos sus operaciones hacia entornos Cloud Nativos. Alta disponibilidad, despliegues sin interrupciones y reducción de costos operativos."
         withCTA
       />
 
-      <PageSection theme="dark">
+      <PageSection>
         <PageContainer>
-          <PageHeader 
-            title="Ingeniería DevOps & Cloud Nativa" 
-            subtitle="Cambiamos servidores frágiles por ecosistemas elásticos. Nuestra ingeniería asegura que tus costos escalen proporcionalmente a tu éxito, nunca antes."
+          <PageHeader title="El Riesgo del On-Premise" align="center" />
+          <PageFeatureGrid 
+            features={[
+              {
+                title: "Costos de Inactividad (Downtime)",
+                description: "Cada minuto de caída cuesta miles de dólares y daña irremediablemente la reputación de la marca."
+              },
+              {
+                title: "Sobreaprovisionamiento",
+                description: "Pago de servidores inactivos esperando un pico de tráfico que ocurre solo unas cuantas veces al año."
+              },
+              {
+                title: "Recuperación ante Desastres (DRP)",
+                description: "Ausencia de respaldos geo-redundantes que garantizan la continuidad del negocio ante fallos físicos."
+              }
+            ]}
           />
+        </PageContainer>
+      </PageSection>
+
+      <PageSection theme="darker">
+        <PageContainer>
+          <PageHeader title="Nuestra Solución: Cloud Nativo" />
           <PageGrid columns={3}>
             <PageIconCard 
               icon="Cloud"
-              title="Migración Zero-Downtime"
-              text="Transicionamos tus monolitos heredados hacia microservicios o Serverless en AWS/GCP sin interrumpir tu operación comercial."
+              title="Migración y Modernización"
+              text="Transicionamos sus sistemas monolíticos hacia arquitecturas Serverless o de Contenedores (Kubernetes)."
+            />
+            <PageIconCard 
+              icon="Activity"
+              title="Monitorización y Observabilidad"
+              text="Implementamos telemetría avanzada (Datadog, Grafana) para anticipar fallos antes de que afecten al usuario."
             />
             <PageIconCard 
               icon="Cpu"
-              title="Auto-Escalado Elástico"
-              text="Clústeres configurados (Amazon EKS, ECS) para absorber picos de Black Friday y contraerse automáticamente de madrugada."
-            />
-            <PageIconCard 
-              icon="Lock"
-              title="Cloud Security"
-              text="Aislamiento mediante VPCs, Subnets privadas y políticas IAM estrictas. Tu información jamás está expuesta directamente a internet."
+              title="DevOps y Automatización"
+              text="Infraestructura como Código (IaC) con Terraform. Sus servidores se despliegan y versionan como software."
             />
           </PageGrid>
         </PageContainer>
       </PageSection>
 
       <PageSection>
-        <PageContainer width="narrow">
-          <PageHeader 
-            title="Proceso de Despliegue" 
-            align="left" 
-            subtitle="No adivinamos, medimos. Nuestro framework de adopción Cloud minimiza el riesgo técnico."
-          />
-          <PageFeatureGrid features={processData} />
-          
-          <PageCTA 
-            title="¿Tu infraestructura no soporta tu crecimiento?" 
-            subtitle="Agendemos una sesión técnica con uno de nuestros Cloud Architects."
+        <PageContainer>
+          <PageHeader title="Beneficios Corporativos" align="center" />
+          <PageGrid columns={2}>
+            <PageIconCard 
+              icon="Lock"
+              title="Seguridad y Cumplimiento"
+              text="Configuraciones estandarizadas bajo normas internacionales (ISO 27001, SOC2). Redes privadas, WAFs y cifrado at-rest/in-transit."
+            />
+            <PageIconCard 
+              icon="BarChart"
+              title="Elasticidad Financiera (FinOps)"
+              text="Auto-escalado dinámico: pague únicamente por el cómputo que su aplicación requiere en tiempo real, maximizando su ROI."
+            />
+          </PageGrid>
+        </PageContainer>
+      </PageSection>
+
+      <PageSection theme="darker">
+        <PageContainer>
+          <PageHeader title="Cronología de Migración" />
+          <PageTimeline 
+            steps={[
+              {
+                title: "Assessment & Auditoría",
+                description: "Evaluamos su infraestructura actual, dependencias, cuellos de botella y costos ocultos."
+              },
+              {
+                title: "Estrategia Cloud",
+                description: "Definimos si el enfoque será Rehosting (Lift & Shift), Replatforming o Refactoring hacia Microservicios."
+              },
+              {
+                title: "Proof of Concept (PoC)",
+                description: "Migramos un flujo no crítico para validar el rendimiento, la latencia y la seguridad del nuevo entorno."
+              },
+              {
+                title: "Migración a Producción",
+                description: "Corte controlado con mínima disrupción. Implementación de CI/CD para futuros despliegues automáticos."
+              }
+            ]}
           />
         </PageContainer>
       </PageSection>
 
-    </main>
+      <PageSection>
+        <PageContainer>
+          <PageHeader title="Preguntas Frecuentes" />
+          <PageFAQ 
+            faqs={[
+              {
+                question: "¿Con qué proveedores de nube trabajan?",
+                answer: "Somos agnósticos, aunque nos especializamos en AWS y Google Cloud Platform (GCP). También operamos ecosistemas Vercel/Next.js para aplicaciones Frontend Serverless."
+              },
+              {
+                question: "¿Habrá tiempo de inactividad durante la migración?",
+                answer: "Diseñamos la estrategia para lograr Zero-Downtime. Sincronizamos las bases de datos en tiempo real y realizamos un cambio de DNS instantáneo cuando el nuevo entorno está validado."
+              },
+              {
+                question: "¿Qué es Infraestructura como Código (IaC)?",
+                answer: "Es la práctica de definir sus servidores (redes, bases de datos, permisos) en archivos de código. Esto permite recrear su infraestructura completa en minutos ante un desastre, eliminando el error humano."
+              }
+            ]}
+          />
+        </PageContainer>
+      </PageSection>
+
+      <PageCTA 
+        title="Eleve la resiliencia de sus operaciones" 
+        subtitle="Permítanos auditar su infraestructura actual y diseñar un roadmap de modernización Cloud."
+      />
+    </>
   );
 }
