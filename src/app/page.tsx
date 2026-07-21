@@ -1,8 +1,12 @@
+import ContactForm from '@/components/home/ContactForm';
+import PrivacyModal from '@/components/home/PrivacyModal';
+import ScrollToTop from '@/components/home/ScrollToTop';
+import HomeContainer from '@/components/home/HomeContainer';
 export default function Home() {
   return (
     <>
       {/*  MAIN CONTENT  */}
-    <main>
+    <HomeContainer>
         {/*  HÉROE  */}
         <section id="inicio" className="hero">
             <div className="hero-content fade-in-up">
@@ -371,30 +375,7 @@ export default function Home() {
                 <div className="contact-grid">
                     {/*  Formulario  */}
                     <div className="contact-form fade-in-up">
-                        <form id="contactForm" action="https://formsubmit.co/ajax/codigonexo.rgz@gmail.com" method="POST">
-                            <div className="form-group">
-                                <label htmlFor="nombre" style={{display: 'none'}}>Nombre</label>
-                                <input type="text" id="nombre" name="name" className="form-control" placeholder="Tu Nombre *" required />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="email" style={{display: 'none'}}>Correo Electrónico</label>
-                                <input type="email" id="email" name="email" className="form-control" placeholder="Tu Correo Electrónico *" required />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="telefono" style={{display: 'none'}}>Teléfono</label>
-                                <input type="tel" id="telefono" name="phone" className="form-control" placeholder="Tu Teléfono (Opcional)" />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="mensaje" style={{display: 'none'}}>Mensaje</label>
-                                <textarea id="mensaje" name="message" className="form-control" placeholder="Cuéntanos sobre tu idea o proyecto *" required></textarea>
-                            </div>
-                            <button type="submit" className="btn btn-primary form-btn">Cotizar proyecto</button>
-<p style={{fontSize: '0.85rem', marginTop: '15px', color: 'var(--gris-texto)', textAlign: 'center', fontWeight: '500'}}>Recibe una propuesta técnica y cotización inicial en menos de 24 horas.</p>
-                        </form>
-                        <div id="formSuccess" className="success-message">
-                            ¡Gracias! Te responderemos en menos de 24 horas.
-                        </div>
-                        <p className="disclaimer">Al enviar este formulario aceptas nuestro <a href="#" id="openPrivacyModal">Aviso de Privacidad</a>.</p>
+                        <ContactForm />
                     </div>
                     
                     {/*  Info de Contacto  */}
@@ -469,7 +450,7 @@ export default function Home() {
                 </div>
             </div>
         </section>
-    </main>
+    </HomeContainer>
     {/*  BOTONES FLOTANTES  */}
     <a href="https://wa.me/525529058845?text=Hola%20CódigoNexo,%20me%20interesa%20una%20solución%20digital." target="_blank" rel="noopener noreferrer" className="floating-btn whatsapp-btn" aria-label="Chat en WhatsApp">
         {/*  @license lucide-static v1.25.0 - ISC  */}
@@ -490,60 +471,13 @@ export default function Home() {
 
     </a>
     
-    <a href="#inicio" className="floating-btn scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
-        {/*  @license lucide-static v1.25.0 - ISC  */}
-<svg
-  className="lucide lucide-arrow-up"
-  xmlns="http://www.w3.org/2000/svg"
-  width="1em"
-  height="1em"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  strokeLinecap="round"
-  strokeLinejoin="round"
->
-  <path d="m5 12 7-7 7 7" />
-  <path d="M12 19V5" />
-</svg>
-
-    </a>
+    <ScrollToTop />
 
     {/*  MODAL AVISO DE PRIVACIDAD  */}
-    <div className="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div className="modal-content">
-            <button className="modal-close" id="closePrivacyModal" aria-label="Cerrar modal">
-                {/*  @license lucide-static v1.25.0 - ISC  */}
-<svg
-  className="lucide lucide-x"
-  xmlns="http://www.w3.org/2000/svg"
-  width="1em"
-  height="1em"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  strokeLinecap="round"
-  strokeLinejoin="round"
->
-  <path d="M18 6 6 18" />
-  <path d="m6 6 12 12" />
-</svg>
-
-            </button>
-            <div className="modal-body">
-                <h2 id="modalTitle">Aviso de Privacidad</h2>
-                <p>En CódigoNexo, valoramos y respetamos tu privacidad. Los datos personales recabados a través de nuestro formulario de contacto serán utilizados exclusivamente para dar seguimiento a tu solicitud, brindarte asesoría y enviarte información relacionada con nuestros servicios.</p>
-                <p>Tus datos no serán compartidos, vendidos ni alquilados a terceros bajo ninguna circunstancia, y se almacenarán de forma segura aplicando medidas técnicas y administrativas para evitar su vulneración.</p>
-                <p>De conformidad con la legislación aplicable, tienes derecho a ejercer tus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) sobre tus datos personales. Para cualquier solicitud relacionada con el manejo de tu información, puedes contactarnos directamente en <strong>codigonexo.rgz@gmail.com</strong>.</p>
-                <p>Al enviar tus datos, confirmas que has leído y aceptas los términos de este Aviso de Privacidad.</p>
-            </div>
-        </div>
-    </div>
+    <PrivacyModal />
 
     {/*  SCRIPTS  */}
-    <script src="assets/js/main.js" defer></script>
+    
 
     </>
   );
